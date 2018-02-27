@@ -63,6 +63,10 @@ class PushScreen extends React.Component {
       </View >
     );
   }
+
+  componentWillUnmount() {
+    this.vb.stop();
+  }
 }
 
 const styles = StyleSheet.create({
