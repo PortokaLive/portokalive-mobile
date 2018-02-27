@@ -1,7 +1,6 @@
-package com.ishow;
+package cn.nodemedia.ishow;
 
 import android.app.Application;
-
 import com.facebook.react.ReactApplication;
 import com.oblador.vectoricons.VectorIconsPackage;
 import cn.nodemedia.react_native_nodemediaclient.NodeMediaReactPackage;

@@ -1,4 +1,4 @@
-package com.ishow;
+package cn.nodemedia.ishow;
 
 import com.facebook.react.ReactActivity;
 
