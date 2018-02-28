@@ -1,15 +1,19 @@
 import React from 'react';
-import { Text, TextInput, View, Button, StatusBar } from 'react-native';
+import { Text, TextInput, View, Button, StatusBar,Platform } from 'react-native';
 import { StackNavigator, } from 'react-navigation';
 import PlayScreen from './PlayScreen';
 import PushScreen from './PushScreen';
+import { NodeMediaClient } from 'react-native-nodemediaclient';
 
 class HomeScreen extends React.Component {
-  static navigationOptions = {
-    title: 'Home',
-  };
   constructor(props) {
     super(props);
+    if(Platform.OS==='android'){ 
+      NodeMediaClient.setPremium('ns4k8tKauz3Vp1sNVA3pTSEfzcxdsstreijcocTDcxDKFh9r5Em/gGLj27TAyL1qRY1K3cgExaT1IQQJeV3ehg==');
+    }else{
+      NodeMediaClient.setPremium('rgHLu/8TGWHUAj2tb/LcQ+oa846VdcVoO1anQzkJoDmkJsu25LolBw2JAX76mxgVH4tFKG3UKNGKGtyfHNwZ8Q==');
+    }
+    
     this.state = {
       playserver: 'rtmp://alplay.nodemedia.cn/ishow/',
       pushserver: 'rtmp://alpush.nodemedia.cn/ishow/',

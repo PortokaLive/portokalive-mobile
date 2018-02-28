@@ -11,15 +11,15 @@ class PushScreen extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { 'flashenable': false};
+    this.state = { 'flashenable': false };
   }
 
   render() {
     const { params } = this.props.navigation.state;
 
     return (
-      <View style={{ flex: 1  ,backgroundColor: '#333'}}>
-      <StatusBar
+      <View style={{ flex: 1, backgroundColor: '#333' }}>
+        <StatusBar
           barStyle="light-content"
           backgroundColor="#6a51ae"
         />
@@ -27,9 +27,10 @@ class PushScreen extends React.Component {
           style={{ flex: 1 }}
           ref={(vb) => { this.vb = vb }}
           outputUrl={params.pushserver + params.stream}
-          camera={{ cameraId: 0, cameraFrontMirror: true }}
+          camera={{ cameraId: 1, cameraFrontMirror: true }}
           audio={{ bitrate: 32000, profile: 1, samplerate: 44100 }}
           video={{ preset: 1, bitrate: 500000, profile: 1, fps: 15, videoFrontMirror: false }}
+          smoothSkinLevel={3}
           autopreview={true}
         />
         <ActionButton
@@ -41,10 +42,10 @@ class PushScreen extends React.Component {
           verticalOrientation='down'
 
         >
-          <ActionButton.Item buttonColor='#9b59b6' title="Reverse Camera" onPress={() => { 
+          <ActionButton.Item buttonColor='#9b59b6' title="Reverse Camera" onPress={() => {
             this.vb.switchCamera();
             this.state.flashenable = false;
-            }}>
+          }}>
             <Icon name="ios-reverse-camera-outline" style={styles.actionButtonIcon} />
           </ActionButton.Item>
           <ActionButton.Item buttonColor='#3498db' title="Switch Flashlight" onPress={() => {
