@@ -1,24 +1,49 @@
 import React from 'react';
-import { Text, TextInput, View, Button, StatusBar,Platform } from 'react-native';
-import { StackNavigator, } from 'react-navigation';
+import { Text, TextInput, View, Button, StatusBar, Platform, PermissionsAndroid } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import PlayScreen from './PlayScreen';
 import PushScreen from './PushScreen';
 import { NodeMediaClient } from 'react-native-nodemediaclient';
 
+const requestCameraPermission = async () => {
+  try {
+    const granted = await PermissionsAndroid.requestMultiple([PermissionsAndroid.PERMISSIONS.CAMERA, PermissionsAndroid.PERMISSIONS.RECORD_AUDIO],
+      {
+        title: "Cool Photo App Camera And Microphone Permission",
+        message:
+          "Cool Photo App needs access to your camera " +
+          "so you can take awesome pictures.",
+        buttonNeutral: "Ask Me Later",
+        buttonNegative: "Cancel",
+        buttonPositive: "OK"
+      }
+    );
+    if (granted === PermissionsAndroid.RESULTS.GRANTED) {
+      console.log("You can use the camera");
+    } else {
+      console.log("Camera permission denied");
+    }
+  } catch (err) {
+    console.warn(err);
+  }
+};
+
 class HomeScreen extends React.Component {
   constructor(props) {
     super(props);
-    if(Platform.OS==='android'){ 
-      NodeMediaClient.setPremium('ns4k8tKauz3Vp1sNVA3pTSEfzcxdsstreijcocTDcxDKFh9r5Em/gGLj27TAyL1qRY1K3cgExaT1IQQJeV3ehg==');
-    }else{
-      NodeMediaClient.setPremium('rgHLu/8TGWHUAj2tb/LcQ+oa846VdcVoO1anQzkJoDmkJsu25LolBw2JAX76mxgVH4tFKG3UKNGKGtyfHNwZ8Q==');
-    }
-    
+    this.props = props;
     this.state = {
-      playserver: 'rtmp://alplay.nodemedia.cn/ishow/',
-      pushserver: 'rtmp://alpush.nodemedia.cn/ishow/',
-      stream: '' + (Math.floor(Math.random() * (9999 - 1000)) + 1000),
-    };
+      playserver: "rtmp://192.168.0.2/live/",
+      pushserver: "rtmp://192.168.0.2/live/",
+      stream: 'demo_' + (Math.floor(Math.random() * (999 - 100)) + 100),
+    }
+  }
+
+  componentWillMount() {
+    if (Platform.OS === 'android') {
+      requestCameraPermission()
+    }
   }
 
   render() {
@@ -28,7 +53,7 @@ class HomeScreen extends React.Component {
           barStyle="light-content"
           backgroundColor="#6a51ae"
         />
-        <Text style={{ color: '#fff', fontSize: 48, marginBottom: 36 }}>iShow</Text>
+        <Text style={{ color: '#fff', fontSize: 48, marginTop: 36, marginBottom: 36 }}>iShow</Text>
         <Text style={{ color: '#fff', fontSize: 18 }}>Please enter a stream name.</Text>
         <TextInput
           style={{ color: '#fff', height: 40, padding: 8 }}
@@ -53,24 +78,33 @@ class HomeScreen extends React.Component {
   }
 }
 
+const Stack = createStackNavigator();
 
-const RootStack = StackNavigator(
-  {
-    Home: {
-      screen: HomeScreen,
-    },
-    Play: {
-      screen: PlayScreen,
-    },
-    Push: {
-      screen: PushScreen,
-    },
-  },
-  {
-    initialRouteName: 'Home',
-    headerMode: 'none'
-  }
-);
+function RootStack() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName="Home"
+        headerMode="none"
+      >
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ title: 'iShow' }}
+        />
+        <Stack.Screen
+          name="Play"
+          component={PlayScreen}
+        />
+        <Stack.Screen
+          name="Push"
+          component={PushScreen}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+
+  );
+}
 
 export default class App extends React.Component {
   render() {

@@ -15,7 +15,6 @@ class PushScreen extends React.Component {
   }
 
   render() {
-    const { params } = this.props.navigation.state;
 
     return (
       <View style={{ flex: 1, backgroundColor: '#333' }}>
@@ -26,7 +25,7 @@ class PushScreen extends React.Component {
         <NodeCameraView
           style={{ flex: 1 }}
           ref={(vb) => { this.vb = vb }}
-          outputUrl={params.pushserver + params.stream}
+          outputUrl={this.props.route.params.pushserver + this.props.route.params.stream}
           camera={{ cameraId: 1, cameraFrontMirror: true }}
           audio={{ bitrate: 32000, profile: 1, samplerate: 44100 }}
           video={{ preset: 1, bitrate: 500000, profile: 1, fps: 15, videoFrontMirror: false }}
@@ -35,7 +34,7 @@ class PushScreen extends React.Component {
         />
         <ActionButton
           buttonColor="#1abc9c"
-          offsetY={24}
+          offsetY={32}
           offsetX={16}
           size={32}
           hideShadow={true}

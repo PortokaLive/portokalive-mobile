@@ -9,7 +9,7 @@ class PlayScreen extends React.Component {
   };
 
   render() {
-    const { params } = this.props.navigation.state;
+    console.log( this.props)
     return (
       <View style={{ flex: 1 }}>
         <StatusBar
@@ -19,7 +19,7 @@ class PlayScreen extends React.Component {
         <NodePlayerView
           style={{ flex: 1, backgroundColor: '#333' }}
           ref={(vp) => { this.vp = vp }}
-          inputUrl={params.playserver + params.stream}
+          inputUrl={this.props.route.params.playserver + this.props.route.params.stream}
           scaleMode={"ScaleAspectFill"}
           bufferTime={300}
           maxBufferTime={1000}
@@ -29,7 +29,7 @@ class PlayScreen extends React.Component {
         <ActionButton
           buttonColor="rgba(231,76,60,1)"
           // position='left'
-          offsetY={24}
+          offsetY={32}
           offsetX={16}
           size={32}
           hideShadow={true}
