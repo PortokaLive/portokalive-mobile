@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* iShowRNTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* iShowRNTests.m */; };
-		01FEFF479D3007C75A89D203 /* libPods-iShowRN-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9923C3393C4A6F25E39B06D1 /* libPods-iShowRN-tvOSTests.a */; };
+		00E356F31AD99517003FC87E /* PortokaLiveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* PortokaLiveTests.m */; };
+		01FEFF479D3007C75A89D203 /* libPods-PortokaLive-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9923C3393C4A6F25E39B06D1 /* libPods-PortokaLive-tvOSTests.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -16,10 +16,10 @@
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2DCD954D1E0B4F2C00145EB5 /* iShowRNTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* iShowRNTests.m */; };
-		87D8041E13144ABEFD8BCB9C /* libPods-iShowRN-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1691269A6A1BDBC1485D7C63 /* libPods-iShowRN-tvOS.a */; };
-		D6C2DC97C70DCDE93A839AA5 /* libPods-iShowRN.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D2B69FAD061A882259EDA9 /* libPods-iShowRN.a */; };
-		DBE1CD904ACC22248FD33158 /* libPods-iShowRN-iShowRNTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDFEFC275302ACFA4CEF2E4 /* libPods-iShowRN-iShowRNTests.a */; };
+		2DCD954D1E0B4F2C00145EB5 /* PortokaLiveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* PortokaLiveTests.m */; };
+		87D8041E13144ABEFD8BCB9C /* libPods-PortokaLive-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1691269A6A1BDBC1485D7C63 /* libPods-PortokaLive-tvOS.a */; };
+		D6C2DC97C70DCDE93A839AA5 /* libPods-PortokaLive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D2B69FAD061A882259EDA9 /* libPods-PortokaLive.a */; };
+		DBE1CD904ACC22248FD33158 /* libPods-PortokaLive-PortokaLiveTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDFEFC275302ACFA4CEF2E4 /* libPods-PortokaLive-PortokaLiveTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,45 +28,45 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = iShowRN;
+			remoteInfo = PortokaLive;
 		};
 		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
-			remoteInfo = "iShowRN-tvOS";
+			remoteInfo = "PortokaLive-tvOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		00E356EE1AD99517003FC87E /* iShowRNTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iShowRNTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* PortokaLiveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PortokaLiveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* iShowRNTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iShowRNTests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* iShowRN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iShowRN.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = iShowRN/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = iShowRN/AppDelegate.m; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* PortokaLiveTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PortokaLiveTests.m; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* PortokaLive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PortokaLive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = PortokaLive/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = PortokaLive/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = iShowRN/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = iShowRN/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = iShowRN/main.m; sourceTree = "<group>"; };
-		1691269A6A1BDBC1485D7C63 /* libPods-iShowRN-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iShowRN-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		23E958FF6775A88018E255ED /* Pods-iShowRN-iShowRNTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iShowRN-iShowRNTests.debug.xcconfig"; path = "Target Support Files/Pods-iShowRN-iShowRNTests/Pods-iShowRN-iShowRNTests.debug.xcconfig"; sourceTree = "<group>"; };
-		28D2B69FAD061A882259EDA9 /* libPods-iShowRN.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iShowRN.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		294F2FA53030CAADCB8A3A9C /* Pods-iShowRN-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iShowRN-tvOS.release.xcconfig"; path = "Target Support Files/Pods-iShowRN-tvOS/Pods-iShowRN-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		2D02E47B1E0B4A5D006451C7 /* iShowRN-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iShowRN-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D02E4901E0B4A5D006451C7 /* iShowRN-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "iShowRN-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		302B4DE4EFFC441CE95758AF /* Pods-iShowRN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iShowRN.debug.xcconfig"; path = "Target Support Files/Pods-iShowRN/Pods-iShowRN.debug.xcconfig"; sourceTree = "<group>"; };
-		33426073151D04D28D2A840B /* Pods-iShowRN-iShowRNTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iShowRN-iShowRNTests.release.xcconfig"; path = "Target Support Files/Pods-iShowRN-iShowRNTests/Pods-iShowRN-iShowRNTests.release.xcconfig"; sourceTree = "<group>"; };
-		9923C3393C4A6F25E39B06D1 /* libPods-iShowRN-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iShowRN-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A931531E2BD3737D4A92BB37 /* Pods-iShowRN-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iShowRN-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-iShowRN-tvOSTests/Pods-iShowRN-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		AEDFEFC275302ACFA4CEF2E4 /* libPods-iShowRN-iShowRNTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iShowRN-iShowRNTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B89BAF5B0DCB7A6B8E3F9BDA /* Pods-iShowRN-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iShowRN-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-iShowRN-tvOSTests/Pods-iShowRN-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		C781EF304B44A8A474B3D466 /* Pods-iShowRN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iShowRN.release.xcconfig"; path = "Target Support Files/Pods-iShowRN/Pods-iShowRN.release.xcconfig"; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = PortokaLive/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PortokaLive/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = PortokaLive/main.m; sourceTree = "<group>"; };
+		1691269A6A1BDBC1485D7C63 /* libPods-PortokaLive-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PortokaLive-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		23E958FF6775A88018E255ED /* Pods-PortokaLive-PortokaLiveTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortokaLive-PortokaLiveTests.debug.xcconfig"; path = "Target Support Files/Pods-PortokaLive-PortokaLiveTests/Pods-PortokaLive-PortokaLiveTests.debug.xcconfig"; sourceTree = "<group>"; };
+		28D2B69FAD061A882259EDA9 /* libPods-PortokaLive.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PortokaLive.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		294F2FA53030CAADCB8A3A9C /* Pods-PortokaLive-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortokaLive-tvOS.release.xcconfig"; path = "Target Support Files/Pods-PortokaLive-tvOS/Pods-PortokaLive-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		2D02E47B1E0B4A5D006451C7 /* PortokaLive-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PortokaLive-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E4901E0B4A5D006451C7 /* PortokaLive-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PortokaLive-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		302B4DE4EFFC441CE95758AF /* Pods-PortokaLive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortokaLive.debug.xcconfig"; path = "Target Support Files/Pods-PortokaLive/Pods-PortokaLive.debug.xcconfig"; sourceTree = "<group>"; };
+		33426073151D04D28D2A840B /* Pods-PortokaLive-PortokaLiveTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortokaLive-PortokaLiveTests.release.xcconfig"; path = "Target Support Files/Pods-PortokaLive-PortokaLiveTests/Pods-PortokaLive-PortokaLiveTests.release.xcconfig"; sourceTree = "<group>"; };
+		9923C3393C4A6F25E39B06D1 /* libPods-PortokaLive-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PortokaLive-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A931531E2BD3737D4A92BB37 /* Pods-PortokaLive-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortokaLive-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-PortokaLive-tvOSTests/Pods-PortokaLive-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AEDFEFC275302ACFA4CEF2E4 /* libPods-PortokaLive-PortokaLiveTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PortokaLive-PortokaLiveTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B89BAF5B0DCB7A6B8E3F9BDA /* Pods-PortokaLive-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortokaLive-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-PortokaLive-tvOSTests/Pods-PortokaLive-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		C781EF304B44A8A474B3D466 /* Pods-PortokaLive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortokaLive.release.xcconfig"; path = "Target Support Files/Pods-PortokaLive/Pods-PortokaLive.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		F35E2E1C757590E67DAA93A0 /* Pods-iShowRN-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iShowRN-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-iShowRN-tvOS/Pods-iShowRN-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		F35E2E1C757590E67DAA93A0 /* Pods-PortokaLive-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PortokaLive-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-PortokaLive-tvOS/Pods-PortokaLive-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBE1CD904ACC22248FD33158 /* libPods-iShowRN-iShowRNTests.a in Frameworks */,
+				DBE1CD904ACC22248FD33158 /* libPods-PortokaLive-PortokaLiveTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6C2DC97C70DCDE93A839AA5 /* libPods-iShowRN.a in Frameworks */,
+				D6C2DC97C70DCDE93A839AA5 /* libPods-PortokaLive.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87D8041E13144ABEFD8BCB9C /* libPods-iShowRN-tvOS.a in Frameworks */,
+				87D8041E13144ABEFD8BCB9C /* libPods-PortokaLive-tvOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,20 +98,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01FEFF479D3007C75A89D203 /* libPods-iShowRN-tvOSTests.a in Frameworks */,
+				01FEFF479D3007C75A89D203 /* libPods-PortokaLive-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* iShowRNTests */ = {
+		00E356EF1AD99517003FC87E /* PortokaLiveTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* iShowRNTests.m */,
+				00E356F21AD99517003FC87E /* PortokaLiveTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = iShowRNTests;
+			path = PortokaLiveTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -122,7 +122,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* iShowRN */ = {
+		13B07FAE1A68108700A75B9A /* PortokaLive */ = {
 			isa = PBXGroup;
 			children = (
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
@@ -133,7 +133,7 @@
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = iShowRN;
+			name = PortokaLive;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -141,10 +141,10 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				28D2B69FAD061A882259EDA9 /* libPods-iShowRN.a */,
-				AEDFEFC275302ACFA4CEF2E4 /* libPods-iShowRN-iShowRNTests.a */,
-				1691269A6A1BDBC1485D7C63 /* libPods-iShowRN-tvOS.a */,
-				9923C3393C4A6F25E39B06D1 /* libPods-iShowRN-tvOSTests.a */,
+				28D2B69FAD061A882259EDA9 /* libPods-PortokaLive.a */,
+				AEDFEFC275302ACFA4CEF2E4 /* libPods-PortokaLive-PortokaLiveTests.a */,
+				1691269A6A1BDBC1485D7C63 /* libPods-PortokaLive-tvOS.a */,
+				9923C3393C4A6F25E39B06D1 /* libPods-PortokaLive-tvOSTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -159,9 +159,9 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* iShowRN */,
+				13B07FAE1A68108700A75B9A /* PortokaLive */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* iShowRNTests */,
+				00E356EF1AD99517003FC87E /* PortokaLiveTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				FA6614506E01DA2BACA9B0AB /* Pods */,
@@ -174,10 +174,10 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* iShowRN.app */,
-				00E356EE1AD99517003FC87E /* iShowRNTests.xctest */,
-				2D02E47B1E0B4A5D006451C7 /* iShowRN-tvOS.app */,
-				2D02E4901E0B4A5D006451C7 /* iShowRN-tvOSTests.xctest */,
+				13B07F961A680F5B00A75B9A /* PortokaLive.app */,
+				00E356EE1AD99517003FC87E /* PortokaLiveTests.xctest */,
+				2D02E47B1E0B4A5D006451C7 /* PortokaLive-tvOS.app */,
+				2D02E4901E0B4A5D006451C7 /* PortokaLive-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -185,14 +185,14 @@
 		FA6614506E01DA2BACA9B0AB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				302B4DE4EFFC441CE95758AF /* Pods-iShowRN.debug.xcconfig */,
-				C781EF304B44A8A474B3D466 /* Pods-iShowRN.release.xcconfig */,
-				23E958FF6775A88018E255ED /* Pods-iShowRN-iShowRNTests.debug.xcconfig */,
-				33426073151D04D28D2A840B /* Pods-iShowRN-iShowRNTests.release.xcconfig */,
-				F35E2E1C757590E67DAA93A0 /* Pods-iShowRN-tvOS.debug.xcconfig */,
-				294F2FA53030CAADCB8A3A9C /* Pods-iShowRN-tvOS.release.xcconfig */,
-				A931531E2BD3737D4A92BB37 /* Pods-iShowRN-tvOSTests.debug.xcconfig */,
-				B89BAF5B0DCB7A6B8E3F9BDA /* Pods-iShowRN-tvOSTests.release.xcconfig */,
+				302B4DE4EFFC441CE95758AF /* Pods-PortokaLive.debug.xcconfig */,
+				C781EF304B44A8A474B3D466 /* Pods-PortokaLive.release.xcconfig */,
+				23E958FF6775A88018E255ED /* Pods-PortokaLive-PortokaLiveTests.debug.xcconfig */,
+				33426073151D04D28D2A840B /* Pods-PortokaLive-PortokaLiveTests.release.xcconfig */,
+				F35E2E1C757590E67DAA93A0 /* Pods-PortokaLive-tvOS.debug.xcconfig */,
+				294F2FA53030CAADCB8A3A9C /* Pods-PortokaLive-tvOS.release.xcconfig */,
+				A931531E2BD3737D4A92BB37 /* Pods-PortokaLive-tvOSTests.debug.xcconfig */,
+				B89BAF5B0DCB7A6B8E3F9BDA /* Pods-PortokaLive-tvOSTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -200,9 +200,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* iShowRNTests */ = {
+		00E356ED1AD99517003FC87E /* PortokaLiveTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "iShowRNTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "PortokaLiveTests" */;
 			buildPhases = (
 				465565AECA5C2CD46F270F24 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -215,14 +215,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = iShowRNTests;
-			productName = iShowRNTests;
-			productReference = 00E356EE1AD99517003FC87E /* iShowRNTests.xctest */;
+			name = PortokaLiveTests;
+			productName = PortokaLiveTests;
+			productReference = 00E356EE1AD99517003FC87E /* PortokaLiveTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* iShowRN */ = {
+		13B07F861A680F5B00A75B9A /* PortokaLive */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "iShowRN" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "PortokaLive" */;
 			buildPhases = (
 				BAF9907B0F2E194681F50BF5 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -236,14 +236,14 @@
 			);
 			dependencies = (
 			);
-			name = iShowRN;
-			productName = iShowRN;
-			productReference = 13B07F961A680F5B00A75B9A /* iShowRN.app */;
+			name = PortokaLive;
+			productName = PortokaLive;
+			productReference = 13B07F961A680F5B00A75B9A /* PortokaLive.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E47A1E0B4A5D006451C7 /* iShowRN-tvOS */ = {
+		2D02E47A1E0B4A5D006451C7 /* PortokaLive-tvOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "iShowRN-tvOS" */;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "PortokaLive-tvOS" */;
 			buildPhases = (
 				A2443D723C41E62B576C0936 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F122414F3F0027D42C /* Start Packager */,
@@ -256,14 +256,14 @@
 			);
 			dependencies = (
 			);
-			name = "iShowRN-tvOS";
-			productName = "iShowRN-tvOS";
-			productReference = 2D02E47B1E0B4A5D006451C7 /* iShowRN-tvOS.app */;
+			name = "PortokaLive-tvOS";
+			productName = "PortokaLive-tvOS";
+			productReference = 2D02E47B1E0B4A5D006451C7 /* PortokaLive-tvOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2D02E48F1E0B4A5D006451C7 /* iShowRN-tvOSTests */ = {
+		2D02E48F1E0B4A5D006451C7 /* PortokaLive-tvOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "iShowRN-tvOSTests" */;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "PortokaLive-tvOSTests" */;
 			buildPhases = (
 				29133B7A2183F8234BCC6E0C /* [CP] Check Pods Manifest.lock */,
 				2D02E48C1E0B4A5D006451C7 /* Sources */,
@@ -275,9 +275,9 @@
 			dependencies = (
 				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
 			);
-			name = "iShowRN-tvOSTests";
-			productName = "iShowRN-tvOSTests";
-			productReference = 2D02E4901E0B4A5D006451C7 /* iShowRN-tvOSTests.xctest */;
+			name = "PortokaLive-tvOSTests";
+			productName = "PortokaLive-tvOSTests";
+			productReference = 2D02E4901E0B4A5D006451C7 /* PortokaLive-tvOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -307,7 +307,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "iShowRN" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "PortokaLive" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -320,10 +320,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* iShowRN */,
-				00E356ED1AD99517003FC87E /* iShowRNTests */,
-				2D02E47A1E0B4A5D006451C7 /* iShowRN-tvOS */,
-				2D02E48F1E0B4A5D006451C7 /* iShowRN-tvOSTests */,
+				13B07F861A680F5B00A75B9A /* PortokaLive */,
+				00E356ED1AD99517003FC87E /* PortokaLiveTests */,
+				2D02E47A1E0B4A5D006451C7 /* PortokaLive-tvOS */,
+				2D02E48F1E0B4A5D006451C7 /* PortokaLive-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -383,7 +383,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iShowRN-iShowRNTests/Pods-iShowRN-iShowRNTests-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-PortokaLive-PortokaLiveTests/Pods-PortokaLive-PortokaLiveTests-resources.sh",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Feather.ttf",
@@ -412,7 +412,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iShowRN-iShowRNTests/Pods-iShowRN-iShowRNTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PortokaLive-PortokaLiveTests/Pods-PortokaLive-PortokaLiveTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		29133B7A2183F8234BCC6E0C /* [CP] Check Pods Manifest.lock */ = {
@@ -430,7 +430,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-iShowRN-tvOSTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-PortokaLive-tvOSTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -466,7 +466,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-iShowRN-iShowRNTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-PortokaLive-PortokaLiveTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -488,7 +488,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-iShowRN-tvOS-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-PortokaLive-tvOS-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -501,7 +501,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-iShowRN/Pods-iShowRN-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-PortokaLive/Pods-PortokaLive-resources.sh",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Entypo.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/Feather.ttf",
@@ -530,7 +530,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iShowRN/Pods-iShowRN-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PortokaLive/Pods-PortokaLive-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BAF9907B0F2E194681F50BF5 /* [CP] Check Pods Manifest.lock */ = {
@@ -548,7 +548,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-iShowRN-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-PortokaLive-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -600,7 +600,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* iShowRNTests.m in Sources */,
+				00E356F31AD99517003FC87E /* PortokaLiveTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,7 +626,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DCD954D1E0B4F2C00145EB5 /* iShowRNTests.m in Sources */,
+				2DCD954D1E0B4F2C00145EB5 /* PortokaLiveTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -635,12 +635,12 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* iShowRN */;
+			target = 13B07F861A680F5B00A75B9A /* PortokaLive */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2D02E47A1E0B4A5D006451C7 /* iShowRN-tvOS */;
+			target = 2D02E47A1E0B4A5D006451C7 /* PortokaLive-tvOS */;
 			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -652,7 +652,7 @@
 				13B07FB21A68108700A75B9A /* Base */,
 			);
 			name = LaunchScreen.xib;
-			path = iShowRN;
+			path = PortokaLive;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -660,14 +660,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 23E958FF6775A88018E255ED /* Pods-iShowRN-iShowRNTests.debug.xcconfig */;
+			baseConfigurationReference = 23E958FF6775A88018E255ED /* Pods-PortokaLive-PortokaLiveTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = iShowRNTests/Info.plist;
+				INFOPLIST_FILE = PortokaLiveTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -677,17 +677,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iShowRN.app/iShowRN";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PortokaLive.app/PortokaLive";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 33426073151D04D28D2A840B /* Pods-iShowRN-iShowRNTests.release.xcconfig */;
+			baseConfigurationReference = 33426073151D04D28D2A840B /* Pods-PortokaLive-PortokaLiveTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = iShowRNTests/Info.plist;
+				INFOPLIST_FILE = PortokaLiveTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -697,13 +697,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iShowRN.app/iShowRN";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PortokaLive.app/PortokaLive";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 302B4DE4EFFC441CE95758AF /* Pods-iShowRN.debug.xcconfig */;
+			baseConfigurationReference = 302B4DE4EFFC441CE95758AF /* Pods-PortokaLive.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -714,7 +714,7 @@
 					"$(inherited)",
 					"FB_SONARKIT_ENABLED=1",
 				);
-				INFOPLIST_FILE = iShowRN/Info.plist;
+				INFOPLIST_FILE = PortokaLive/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -722,7 +722,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = iShowRN;
+				PRODUCT_NAME = PortokaLive;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -731,13 +731,13 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C781EF304B44A8A474B3D466 /* Pods-iShowRN.release.xcconfig */;
+			baseConfigurationReference = C781EF304B44A8A474B3D466 /* Pods-PortokaLive.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KH9H8WF8C5;
-				INFOPLIST_FILE = iShowRN/Info.plist;
+				INFOPLIST_FILE = PortokaLive/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -745,7 +745,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = iShowRN;
+				PRODUCT_NAME = PortokaLive;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -753,7 +753,7 @@
 		};
 		2D02E4971E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F35E2E1C757590E67DAA93A0 /* Pods-iShowRN-tvOS.debug.xcconfig */;
+			baseConfigurationReference = F35E2E1C757590E67DAA93A0 /* Pods-PortokaLive-tvOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -764,14 +764,14 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "iShowRN-tvOS/Info.plist";
+				INFOPLIST_FILE = "PortokaLive-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.iShowRN-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.PortokaLive-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -781,7 +781,7 @@
 		};
 		2D02E4981E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 294F2FA53030CAADCB8A3A9C /* Pods-iShowRN-tvOS.release.xcconfig */;
+			baseConfigurationReference = 294F2FA53030CAADCB8A3A9C /* Pods-PortokaLive-tvOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -792,14 +792,14 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "iShowRN-tvOS/Info.plist";
+				INFOPLIST_FILE = "PortokaLive-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.iShowRN-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.PortokaLive-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -809,7 +809,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A931531E2BD3737D4A92BB37 /* Pods-iShowRN-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = A931531E2BD3737D4A92BB37 /* Pods-PortokaLive-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -819,24 +819,24 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "iShowRN-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "PortokaLive-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.iShowRN-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.PortokaLive-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iShowRN-tvOS.app/iShowRN-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PortokaLive-tvOS.app/PortokaLive-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Debug;
 		};
 		2D02E49A1E0B4A5E006451C7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B89BAF5B0DCB7A6B8E3F9BDA /* Pods-iShowRN-tvOSTests.release.xcconfig */;
+			baseConfigurationReference = B89BAF5B0DCB7A6B8E3F9BDA /* Pods-PortokaLive-tvOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -846,17 +846,17 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "iShowRN-tvOSTests/Info.plist";
+				INFOPLIST_FILE = "PortokaLive-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.iShowRN-tvOSTests";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.PortokaLive-tvOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iShowRN-tvOS.app/iShowRN-tvOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PortokaLive-tvOS.app/PortokaLive-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 			};
 			name = Release;
@@ -977,7 +977,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "iShowRNTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "PortokaLiveTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -986,7 +986,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "iShowRN" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "PortokaLive" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -995,7 +995,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "iShowRN-tvOS" */ = {
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "PortokaLive-tvOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4971E0B4A5E006451C7 /* Debug */,
@@ -1004,7 +1004,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "iShowRN-tvOSTests" */ = {
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "PortokaLive-tvOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D02E4991E0B4A5E006451C7 /* Debug */,
@@ -1013,7 +1013,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "iShowRN" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "PortokaLive" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

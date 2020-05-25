@@ -44,8 +44,8 @@ def flipper_post_install(installer)
   end
 end
 
-target 'iShowRN' do
-  # Pods for iShowRN
+target 'PortokaLive' do
+  # Pods for PortokaLive
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
   pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
@@ -77,7 +77,7 @@ target 'iShowRN' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  target 'iShowRNTests' do
+  target 'PortokaLiveTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -94,10 +94,10 @@ target 'iShowRN' do
   end
 end
 
-target 'iShowRN-tvOS' do
-  # Pods for iShowRN-tvOS
+target 'PortokaLive-tvOS' do
+  # Pods for PortokaLive-tvOS
 
-  target 'iShowRN-tvOSTests' do
+  target 'PortokaLive-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end
