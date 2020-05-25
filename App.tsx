@@ -5,10 +5,12 @@ import * as eva from "@eva-design/eva";
 import { ApplicationProvider } from "@ui-kitten/components";
 import { HomeScreen } from "./src/screens/HomeScreen";
 import { LoginScreen } from "./src/screens/LoginScreen";
+import { checkPreviousSession } from "./src/utils/helpers/SessionHelper";
 
+checkPreviousSession();
 const Stack = createStackNavigator();
 
-function RootStack() {
+export const App = () => {
   return (
     <ApplicationProvider {...eva} theme={eva.light}>
       <NavigationContainer>
@@ -19,10 +21,4 @@ function RootStack() {
       </NavigationContainer>
     </ApplicationProvider>
   );
-}
-
-export default class App extends React.Component {
-  render() {
-    return <RootStack />;
-  }
-}
+};

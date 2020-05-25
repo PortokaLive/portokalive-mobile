@@ -1,16 +1,16 @@
 import { getItem } from "./AsyncStorageHelpers";
+import jwtDecode from "jwt-decode";
+import { setCurrentUser, logoutUser } from "../redux/actions/ActionAuth";
 
-
-export const checkPreviousSession = () => {
-  if (getItem("token")) {
-    const token = localStorage.getItem("token") || "";
-    const decoded = jwt_decode<any>(token);
+export const checkPreviousSession = async () => {
+  const token = await getItem("token");
+  if (token) {
+    const decoded = jwtDecode<any>(token);
     setCurrentUser(decoded);
-    const currenDate = Date.now() / 1000;
+    const currentDate = Date.now() / 1000;
 
-    if (decoded.exp < currenDate) {
+    if (decoded.exp < currentDate) {
       logoutUser();
-      window.location.href = "/";
     }
   }
-}
+};
