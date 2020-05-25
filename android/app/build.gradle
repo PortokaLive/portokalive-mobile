@@ -129,7 +129,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.ishowrn"
+        applicationId "com.portokalive"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

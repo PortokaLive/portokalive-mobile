@@ -1,5 +1,4 @@
-# iShow-RN
-![img](https://raw.githubusercontent.com/NodeMedia/iShow-RN/master/1519740855033.gif)
+# Portokalive-Mobile
 
 ## How to run
 ### 1. install RN dependencies
