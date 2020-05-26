@@ -6,6 +6,7 @@ import * as eva from "@eva-design/eva";
 import { ApplicationProvider } from "@ui-kitten/components";
 import { HomeScreen } from "./src/screens/HomeScreen";
 import { Store } from "./src/utils/redux/Store";
+import { LoginScreen } from "./src/screens/LoginScreen";
 
 const Stack = createStackNavigator();
 
@@ -16,6 +17,7 @@ function RootStack() {
         <NavigationContainer>
           <Stack.Navigator initialRouteName="Home" headerMode="none">
             <Stack.Screen name="Home" component={HomeScreen} />
+            <Stack.Screen name="Login" component={LoginScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </ApplicationProvider>

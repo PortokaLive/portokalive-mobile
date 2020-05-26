@@ -1,8 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Layout, Text } from "@ui-kitten/components";
 import { MainTheme } from "../theme/MainTheme";
+import { useSelector } from "../utils/redux/Store";
 
-export const HomeScreen = () => {
+export const HomeScreen = ({ navigation }: any) => {
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      navigation.navigate("Login");
+    }
+  }, [isAuthenticated, navigation]);
+
   return (
     <Layout style={MainTheme.container}>
       <Text category="h1">HOME</Text>
