@@ -15,6 +15,7 @@
     "@react-navigation/native": "^5.1.5",
     "@react-navigation/stack": "^5.2.10",
     "@ui-kitten/components": "^5.0.0",
+    "@ui-kitten/eva-icons": "^5.0.0",
     "axios": "^0.19.2",
     "jwt-decode": "^2.2.0",
     "react": "16.11.0",

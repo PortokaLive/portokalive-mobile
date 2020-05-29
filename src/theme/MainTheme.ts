@@ -1,4 +1,5 @@
-import { ViewStyle, StyleProp } from "react-native";
+import { ViewStyle, StyleProp, TextStyle } from "react-native";
+import { default as Colors } from "./Colors.json";
 
 const container: StyleProp<ViewStyle> = {
   flex: 1,
@@ -6,6 +7,19 @@ const container: StyleProp<ViewStyle> = {
   alignItems: "center",
 };
 
+const width_90: StyleProp<ViewStyle> = {
+  width: "90%",
+};
+
+const textDanger: StyleProp<TextStyle> = {
+  color: "red",
+};
+
 export const MainTheme = {
   container,
+
+  //--Width--//
+  width_90,
+  //--Variant---//
+  textDanger,
 };
