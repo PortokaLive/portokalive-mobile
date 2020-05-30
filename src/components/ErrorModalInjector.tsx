@@ -18,7 +18,7 @@ export const ErrorModalInjector = ({ visible, title, message }: any) => {
               style={{
                 fontSize: 22,
                 fontWeight: "bold",
-                width: 200,
+                width: 250,
                 textAlign: "center",
               }}
             >

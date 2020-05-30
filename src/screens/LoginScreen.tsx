@@ -111,7 +111,13 @@ export const LoginScreen = ({ navigation }: any) => {
   };
 
   const handleLogin = () => {
-    if (!error.email && !error.password) {
+    if (!user.email) {
+      handleEmailChange(user.email);
+    }
+    if (!user.password) {
+      handlePasswordChange(user.password);
+    }
+    if (!error.email && !error.password && user.email && user.password) {
       setLoading(true);
       loginUser(user);
     }
