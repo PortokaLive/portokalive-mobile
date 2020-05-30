@@ -6,6 +6,10 @@ const container: StyleProp<ViewStyle> = {
   alignItems: "center",
 };
 
+const blackTransparentBackground: StyleProp<ViewStyle> = {
+  backgroundColor: "rgba(0, 0, 0, 0.5)",
+};
+
 const width_100: StyleProp<ViewStyle> = {
   width: "100%",
 };
@@ -37,5 +41,6 @@ export const LayoutTheme = {
   width_80,
   width_70,
   width_60,
-  width_50
-}
+  width_50,
+  blackTransparentBackground,
+};

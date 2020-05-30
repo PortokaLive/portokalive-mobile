@@ -1,24 +1,17 @@
-import { AsyncStorage } from "react-native";
+import AsyncStorage from "@react-native-community/async-storage";
 
 export const getItem = async (key: string) => {
-  try {
-    const value = await AsyncStorage.getItem(key);
-    if (!value) {
-      throw new Error("Unable to get item from async storage");
-    }
-    return value;
-  } catch (error) {
-    console.error(error);
-  }
+  const value = await AsyncStorage.getItem(key);
+  return value;
 };
 
 export const setItem = async (key: string, value: any): Promise<void> => {
-  try {
-    if (typeof value !== "string") {
-      value = JSON.stringify(value);
-    }
-    await AsyncStorage.setItem(key, value);
-  } catch (error) {
-    console.error(error);
+  if (typeof value !== "string") {
+    value = JSON.stringify(value);
   }
+  await AsyncStorage.setItem(key, value);
+};
+
+export const removeItem = async (key: string): Promise<void> => {
+  await AsyncStorage.removeItem(key);
 };

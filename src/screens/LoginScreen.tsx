@@ -1,4 +1,5 @@
-import React, { useReducer, useState } from "react";
+import React, { useReducer, useState, useEffect } from "react";
+import { ActivityIndicator } from "react-native";
 import { Layout, Input, Icon, Text, Button } from "@ui-kitten/components";
 import { MainTheme } from "../theme";
 import { Action } from "../models/Action";
@@ -6,8 +7,11 @@ import { UserReducerType } from "../constants/Types";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 import { LogoImage } from "../components/LogoImage";
 import { EmailRegex } from "../constants/Regex";
+import { loginUser } from "../utils/redux/actions/ActionAuth";
+import { User } from "../models/User";
+import { useSelector } from "../utils/redux/Store";
 
-const initialUser = { email: "", password: "" };
+const initialUser: User = { email: "", password: "" };
 
 const userReducer = (state = initialUser, action: Action<string>) => {
   switch (action.type) {
@@ -34,7 +38,18 @@ const errorReducer = (state = initialUser, action: Action<string>) => {
 export const LoginScreen = ({ navigation }: any) => {
   const [user, dispatchUser] = useReducer(userReducer, initialUser);
   const [error, dispatchError] = useReducer(errorReducer, initialUser);
+  const isError = useSelector((state) => state.globalError);
   const [secureTextEntry, setSecureTextEntry] = useState(true);
+  const [loading, setLoading] = useState(false);
+
+  const renderSpinner = () => (
+    <>
+      {loading && <ActivityIndicator color="white" />}
+      {!loading && (
+        <Text style={{ color: "white", fontWeight: "bold" }}>Login</Text>
+      )}
+    </>
+  );
 
   const renderIcon = (props: any) => (
     <TouchableWithoutFeedback
@@ -95,7 +110,18 @@ export const LoginScreen = ({ navigation }: any) => {
     });
   };
 
-  const handleLogin = () => {}
+  const handleLogin = () => {
+    if (!error.email && !error.password) {
+      setLoading(true);
+      loginUser(user);
+    }
+  };
+
+  useEffect(() => {
+    if (isError.name && isError.message) {
+      setLoading(false);
+    }
+  }, [isError]);
 
   return (
     <Layout style={MainTheme.LayoutTheme.container}>
@@ -117,7 +143,9 @@ export const LoginScreen = ({ navigation }: any) => {
           onChangeText={handlePasswordChange}
         />
         <Text style={MainTheme.TextTheme.textDanger}>{error.password}</Text>
-        <Button style={{ marginTop: 15 }} onPress={handleLogin}>Login</Button>
+        <Button style={{ marginTop: 15 }} onPress={handleLogin}>
+          {renderSpinner}
+        </Button>
         <Layout
           style={{
             marginTop: 50,

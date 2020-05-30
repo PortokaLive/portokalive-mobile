@@ -11,6 +11,8 @@ export const checkPreviousSession = async () => {
 
     if (decoded.exp < currentDate) {
       logoutUser();
+    } else {
+      setCurrentUser(decoded);
     }
   }
 };
