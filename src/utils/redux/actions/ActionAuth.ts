@@ -1,13 +1,12 @@
 import { Store } from "../Store";
-import { SET_CURRENT_USER, GLOBAL_ERROR } from "./Types";
+import { SET_CURRENT_USER, GLOBAL_ERROR, GLOBAL_SUCCESS } from "./Types";
 import { User } from "../../../models/User";
-import { AxiosClient } from "../AxiosClient";
 import { setItem, removeItem } from "../../helpers/AsyncStorageHelper";
 import JwtDecode from "jwt-decode";
 import { Action } from "../../../models/Action";
 import { GlobalError } from "../../../models/Error";
-import { clearError } from "./ActionError";
 import { httpGet, httpPost } from "../../helpers/AxiosHelper";
+import { GlobalSuccess } from "../../../models/Success";
 
 export const loginUser = async (user: User) => {
   try {
@@ -52,4 +51,31 @@ export const setCurrentUser = (user: any) => {
 export const logoutUser = () => {
   removeItem("token");
   setCurrentUser(null);
+};
+
+export const registerUser = async (user: User) => {
+  try {
+    const response = await httpPost("user/register", user);
+    if (!response) {
+      return;
+    }
+    if (response.data && response.data.result) {
+      Store.dispatch({
+        type: GLOBAL_SUCCESS,
+        payload: new GlobalSuccess(200, "Success", response.data.result),
+      });
+    }
+  } catch (ex) {
+    if (!ex) {
+      return;
+    }
+    Store.dispatch({
+      type: GLOBAL_ERROR,
+      payload: new GlobalError(
+        ex?.response?.status,
+        "Registeration failed",
+        ex?.response?.data?.message
+      ),
+    } as Action<GlobalError>);
+  }
 };

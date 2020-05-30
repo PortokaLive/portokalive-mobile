@@ -1,4 +1,4 @@
-import React, { useReducer, useState } from "react";
+import React, { useReducer, useState, useEffect } from "react";
 import { Layout, Input, Icon, Text, Button } from "@ui-kitten/components";
 import { MainTheme } from "../theme";
 import { Action } from "../models/Action";
@@ -12,6 +12,9 @@ import {
   UpperCaseRegex,
   SpecialCharRegex,
 } from "../constants/Regex";
+import { registerUser } from "../utils/redux/actions/ActionAuth";
+import { ActivityIndicator } from "react-native";
+import { useSelector } from "../utils/redux/Store";
 
 const initialUser = { email: "", password: "" };
 
@@ -41,6 +44,17 @@ export const RegisterScreen = ({ navigation }: any) => {
   const [user, dispatchUser] = useReducer(userReducer, initialUser);
   const [error, dispatchError] = useReducer(errorReducer, initialUser);
   const [secureTextEntry, setSecureTextEntry] = useState(true);
+  const [loading, setLoading] = useState(false);
+  const isError = useSelector(state => state.globalError);
+
+  const renderSpinner = () => (
+    <>
+      {loading && <ActivityIndicator color="white" />}
+      {!loading && (
+        <Text style={{ color: "white", fontWeight: "bold" }}>Register</Text>
+      )}
+    </>
+  );
 
   const renderIcon = (props: any) => (
     <TouchableWithoutFeedback
@@ -131,6 +145,25 @@ export const RegisterScreen = ({ navigation }: any) => {
     });
   };
 
+  const handleRegister = () => {
+    if (!user.email) {
+      handleEmailChange(user.email);
+    }
+    if (!user.password) {
+      handlePasswordChange(user.password);
+    }
+    if (!error.email && !error.password && user.email && user.password) {
+      setLoading(true);
+      registerUser(user);
+    }
+  };
+
+  useEffect(() => {
+    if (isError.name) {
+      setLoading(false);
+    }
+  }, [isError]);
+
   return (
     <Layout style={MainTheme.LayoutTheme.container}>
       <Layout>
@@ -151,7 +184,9 @@ export const RegisterScreen = ({ navigation }: any) => {
           onChangeText={handlePasswordChange}
         />
         <Text style={MainTheme.TextTheme.textDanger}>{error.password}</Text>
-        <Button style={{ marginTop: 15 }}>Register</Button>
+        <Button style={{ marginTop: 15 }} onPress={handleRegister}>
+          {renderSpinner}
+        </Button>
         <Layout
           style={{
             marginTop: 50,

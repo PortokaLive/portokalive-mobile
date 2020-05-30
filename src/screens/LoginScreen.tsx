@@ -124,7 +124,7 @@ export const LoginScreen = ({ navigation }: any) => {
   };
 
   useEffect(() => {
-    if (isError.name && isError.message) {
+    if (isError.name) {
       setLoading(false);
     }
   }, [isError]);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { Provider as ReduxProvider } from "react-redux";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -11,20 +11,30 @@ import { LoginScreen } from "./src/screens/LoginScreen";
 import { default as Colors } from "./src/theme/Colors.json";
 import { RegisterScreen } from "./src/screens/RegisterScreen";
 import { checkPreviousSession } from "./src/utils/helpers/SessionHelper";
-import { ErrorModalInjector } from "./src/components/ErrorModalInjector";
+import { ErrorModalInjector } from "./src/components/ModalError";
+import { SuccessModalInjector } from "./src/components/ModalSuccess";
 
 const Stack = createStackNavigator();
 
 function RootStack() {
   checkPreviousSession();
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
-  const isError = useSelector((state) => state.globalError);
+  const error = useSelector((state) => state.globalError);
+  const success = useSelector((state) => state.globalSuccess);
 
   return (
     <>
       <IconRegistry icons={EvaIconsPack} />
       <ApplicationProvider {...eva} theme={{ ...eva.light, ...Colors }}>
-        <ErrorModalInjector visible={isError.name && isError.message} title={isError.name} message={isError.message} />
+        {!!error.name && (
+          <ErrorModalInjector title={error.name} message={error.message} />
+        )}
+        {!!success.name && (
+          <SuccessModalInjector
+            title={success.name}
+            message={success.message}
+          />
+        )}
         <NavigationContainer>
           <Stack.Navigator
             initialRouteName={isAuthenticated ? "Home" : "Login"}

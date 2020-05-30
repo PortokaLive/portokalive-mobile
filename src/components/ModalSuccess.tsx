@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Modal, Card, Text, Button, Layout } from "@ui-kitten/components";
 import { MainTheme } from "../theme";
 import { clearError } from "../utils/redux/actions/ActionError";
 
-export const ErrorModalInjector = ({ visible, title, message }: any) => {
+export const SuccessModalInjector = ({ visible, title, message }: any) => {
   return (
     <>
       <Modal
@@ -26,7 +26,12 @@ export const ErrorModalInjector = ({ visible, title, message }: any) => {
             </Text>
             <Text style={{ fontSize: 18 }}>{message}</Text>
           </Layout>
-          <Button onPress={() => clearError()}>OK</Button>
+          <Button
+            style={MainTheme.ComponentTheme.backgroundSuccess}
+            onPress={() => clearError()}
+          >
+            OK
+          </Button>
         </Card>
       </Modal>
     </>
