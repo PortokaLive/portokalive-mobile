@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Layout, Text } from "@ui-kitten/components";
-import { MainTheme } from "../theme/MainTheme";
+import { MainTheme } from "../theme";
 import { useSelector } from "../utils/redux/Store";
 
 export const HomeScreen = ({ navigation }: any) => {
@@ -13,7 +13,7 @@ export const HomeScreen = ({ navigation }: any) => {
   }, [isAuthenticated, navigation]);
 
   return (
-    <Layout style={MainTheme.container}>
+    <Layout style={MainTheme.LayoutTheme.container}>
       <Text category="h1">HOME</Text>
     </Layout>
   );

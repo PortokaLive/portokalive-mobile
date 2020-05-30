@@ -9,6 +9,7 @@ import { HomeScreen } from "./src/screens/HomeScreen";
 import { Store } from "./src/utils/redux/Store";
 import { LoginScreen } from "./src/screens/LoginScreen";
 import { default as Colors } from "./src/theme/Colors.json";
+import { RegisterScreen } from "./src/screens/RegisterScreen";
 
 const Stack = createStackNavigator();
 
@@ -22,6 +23,7 @@ function RootStack() {
             <Stack.Navigator initialRouteName="Home" headerMode="none">
               <Stack.Screen name="Home" component={HomeScreen} />
               <Stack.Screen name="Login" component={LoginScreen} />
+              <Stack.Screen name="Register" component={RegisterScreen} />
             </Stack.Navigator>
           </NavigationContainer>
         </ApplicationProvider>

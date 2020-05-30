@@ -5,7 +5,13 @@ import { Action } from "../models/Action";
 import { UserReducerType } from "../constants/Types";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 import { LogoImage } from "../components/LogoImage";
-import { EmailRegex } from "../constants/Regex";
+import {
+  EmailRegex,
+  DigitRegex,
+  LowerCaseRegex,
+  UpperCaseRegex,
+  SpecialCharRegex,
+} from "../constants/Regex";
 
 const initialUser = { email: "", password: "" };
 
@@ -31,7 +37,7 @@ const errorReducer = (state = initialUser, action: Action<string>) => {
   }
 };
 
-export const LoginScreen = ({ navigation }: any) => {
+export const RegisterScreen = ({ navigation }: any) => {
   const [user, dispatchUser] = useReducer(userReducer, initialUser);
   const [error, dispatchError] = useReducer(errorReducer, initialUser);
   const [secureTextEntry, setSecureTextEntry] = useState(true);
@@ -71,6 +77,36 @@ export const LoginScreen = ({ navigation }: any) => {
         type: UserReducerType.Password,
         payload: "Password is required",
       });
+    } else if (!LowerCaseRegex.test(password)) {
+      dispatchError({
+        type: UserReducerType.Password,
+        payload: "Password requires a lower-case character",
+      });
+    } else if (!UpperCaseRegex.test(password)) {
+      dispatchError({
+        type: UserReducerType.Password,
+        payload: "Password requires an upper-case character",
+      });
+    } else if (!DigitRegex.test(password)) {
+      dispatchError({
+        type: UserReducerType.Password,
+        payload: "Password requires a number",
+      });
+    } else if (!SpecialCharRegex.test(password)) {
+      dispatchError({
+        type: UserReducerType.Password,
+        payload: "Password requires a special character",
+      });
+    } else if (password.length < 8) {
+      dispatchError({
+        type: UserReducerType.Password,
+        payload: "Password requires 8 characters",
+      });
+    } else if (password.length > 16) {
+      dispatchError({
+        type: UserReducerType.Password,
+        payload: "Password cannot be more than 16 characters",
+      });
     } else {
       dispatchError({
         type: UserReducerType.Password,
@@ -95,8 +131,6 @@ export const LoginScreen = ({ navigation }: any) => {
     });
   };
 
-  const handleLogin = () => {}
-
   return (
     <Layout style={MainTheme.LayoutTheme.container}>
       <Layout>
@@ -117,7 +151,7 @@ export const LoginScreen = ({ navigation }: any) => {
           onChangeText={handlePasswordChange}
         />
         <Text style={MainTheme.TextTheme.textDanger}>{error.password}</Text>
-        <Button style={{ marginTop: 15 }} onPress={handleLogin}>Login</Button>
+        <Button style={{ marginTop: 15 }}>Register</Button>
         <Layout
           style={{
             marginTop: 50,
@@ -125,14 +159,14 @@ export const LoginScreen = ({ navigation }: any) => {
             justifyContent: "center",
           }}
         >
-          <Text>No account yet? Register </Text>
+          <Text>Already have an account? Login </Text>
           <Text
             style={{
               ...MainTheme.TextTheme.textBold,
               ...MainTheme.TextTheme.textPrimary,
             }}
             onPress={() => {
-              navigation.navigate("Register");
+              navigation.navigate("Login");
             }}
           >
             here
