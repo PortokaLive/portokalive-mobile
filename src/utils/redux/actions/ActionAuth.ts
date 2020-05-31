@@ -3,8 +3,7 @@ import {
   SET_CURRENT_USER,
   GLOBAL_ERROR,
   GLOBAL_SUCCESS,
-  ACTIVATION_REQUIRED,
-  ACTIVATION_COMPLETED,
+  ACTIVATION_REQUIRED
 } from "./Types";
 import { User } from "../../../models/User";
 import { setItem, removeItem } from "../../helpers/AsyncStorageHelper";
@@ -13,6 +12,7 @@ import { Action } from "../../../models/Action";
 import { GlobalError } from "../../../models/Error";
 import { httpGet, httpPost } from "../../helpers/AxiosHelper";
 import { GlobalSuccess } from "../../../models/Success";
+import { clearActivation } from "./ActionSuccess";
 
 export const loginUser = async (user: User) => {
   try {
@@ -60,9 +60,11 @@ export const setCurrentUser = (user: any) => {
   } as Action<any>);
 };
 
-export const logoutUser = () => {
+export const logoutUser = (navigation:any) => {
   removeItem("token");
   setCurrentUser(null);
+  clearActivation();
+  navigation.navigate("Logout");
 };
 
 export const registerUser = async (user: User) => {

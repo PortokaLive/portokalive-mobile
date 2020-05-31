@@ -10,7 +10,7 @@ import { EmailRegex } from "../constants/Regex";
 import { loginUser } from "../utils/redux/actions/ActionAuth";
 import { User } from "../models/User";
 import { useSelector } from "../utils/redux/Store";
-import { DeepLinking } from "../components/DeepLinking";
+import { ActivationModalInjector } from "../components/ModalActivation";
 
 const initialUser: User = { email: "", password: "" };
 
@@ -42,9 +42,8 @@ export const LoginScreen = ({ navigation }: any) => {
   const [secureTextEntry, setSecureTextEntry] = useState(true);
   const [loading, setLoading] = useState(false);
   const isError = useSelector((state) => state.globalError);
-  const isActivationRequired = useSelector(
-    (state) => state.auth.activation.isActivationRequired
-  );
+  const activation = useSelector((state) => state.auth.activation);
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
   const renderSpinner = () => (
     <>
@@ -128,14 +127,16 @@ export const LoginScreen = ({ navigation }: any) => {
   };
 
   useEffect(() => {
-    if (isError.name || !isActivationRequired || isActivationRequired) {
+    if (isError.name || isAuthenticated || !activation.isActivationRequired || activation.isActivationRequired) {
       setLoading(false);
     }
-  }, [isError, isActivationRequired]);
+  }, [isError, activation.isActivationRequired,isAuthenticated]);
 
   return (
     <Layout style={MainTheme.LayoutTheme.container}>
-      <DeepLinking />
+      {!!activation.isActivationRequired && (
+        <ActivationModalInjector email={activation.email} />
+      )}
       <Layout>
         <LogoImage width={100} height={100} padding={10} fontSize={35} />
         <Input

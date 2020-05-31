@@ -5,6 +5,7 @@ import { useSelector } from "../utils/redux/Store";
 import { clearActivation } from "../utils/redux/actions/ActionSuccess";
 import { Keyboard } from "react-native";
 import { resendActivation } from "../utils/redux/actions/ActionAuth";
+import { DeepLinking } from "./DeepLinking";
 
 export const ActivationModalInjector = ({ email }: any) => {
   const renderText = () => (
@@ -17,6 +18,7 @@ export const ActivationModalInjector = ({ email }: any) => {
 
   return (
     <>
+      <DeepLinking />
       <Modal
         visible={true}
         backdropStyle={MainTheme.LayoutTheme.blackTransparentBackground}
@@ -37,16 +39,8 @@ export const ActivationModalInjector = ({ email }: any) => {
             </Text>
             <Text>You have not activated your account yet.</Text>
             <Text>Please check your email to activate.</Text>
+            <Text>Do not close the app.</Text>
           </Layout>
-          <Button
-            style={{
-              ...MainTheme.ComponentTheme.backgroundSuccess,
-              ...MainTheme.ComponentTheme.borderSuccess,
-            }}
-            onPress={clearActivation}
-          >
-            OK
-          </Button>
           <Button
             style={{
               marginTop: 10,
@@ -55,7 +49,6 @@ export const ActivationModalInjector = ({ email }: any) => {
             }}
             onPress={() => {
               resendActivation(email);
-              clearActivation();
             }}
           >
             {renderText}

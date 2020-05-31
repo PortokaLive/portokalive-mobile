@@ -39,9 +39,6 @@ function RootStack() {
             message={success.message}
           />
         )}
-        {!!activation.isActivationRequired && (
-          <ActivationModalInjector email={activation.email} />
-        )}
         <NavigationContainer>
           <Stack.Navigator
             initialRouteName={isAuthenticated ? "Home" : "Login"}
@@ -56,9 +53,10 @@ function RootStack() {
               <>
                 <Stack.Screen name="Login" component={LoginScreen} />
                 <Stack.Screen name="Register" component={RegisterScreen} />
-                <Stack.Screen name="Activate" component={ActivateScreen} />
               </>
             )}
+            <Stack.Screen name="Logout" component={LoginScreen} />
+            <Stack.Screen name="Activate" component={ActivateScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </ApplicationProvider>

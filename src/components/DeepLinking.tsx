@@ -4,30 +4,20 @@ import { useNavigation } from "@react-navigation/native";
 import { useSelector } from "../utils/redux/Store";
 
 export const DeepLinking = () => {
-  const isActivationCompleted = useSelector(
-    (state) => state.auth.activation.isActivationCompleted
-  );
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+  const isActivationRequired = useSelector((state) => state.auth.activation.isActivationRequired);
 
   const navigation = useNavigation();
   useEffect(() => {
-    if (isActivationCompleted) {
+    if(!isActivationRequired) {
       return;
-    } else {
-      if (Platform.OS === "android") {
-        Linking.getInitialURL().then((url) => {
-          if (url) {
-            doNavigate(url);
-          }
-        });
-      }
-      Linking.addEventListener("url", handleOpenURL);
-
-      return () => {
-        Linking.removeEventListener("url", handleOpenURL);
-      };
     }
-  }, [isActivationCompleted]);
+    Linking.addEventListener("url", handleOpenURL);
+
+    return () => {
+      Linking.removeEventListener("url", handleOpenURL);
+    };
+  }, [isActivationRequired]);
 
   const handleOpenURL = (event: any) => {
     doNavigate(event.url);

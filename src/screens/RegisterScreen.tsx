@@ -15,7 +15,6 @@ import {
 import { registerUser } from "../utils/redux/actions/ActionAuth";
 import { ActivityIndicator } from "react-native";
 import { useSelector } from "../utils/redux/Store";
-import { DeepLinking } from "../components/DeepLinking";
 
 const initialUser = { email: "", password: "" };
 
@@ -173,7 +172,6 @@ export const RegisterScreen = ({ navigation }: any) => {
 
   return (
     <Layout style={MainTheme.LayoutTheme.container}>
-      <DeepLinking />
       <Layout>
         <LogoImage width={100} height={100} padding={10} fontSize={35} />
         <Input
