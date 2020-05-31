@@ -16,6 +16,7 @@ import { SuccessModalInjector } from "./src/components/ModalSuccess";
 import { DeepLinking } from "./src/components/DeepLinking";
 import { ActivateScreen } from "./src/screens/ActivateScreen";
 import { ActivationModalInjector } from "./src/components/ModalActivation";
+import { LogoutScreen } from "./src/screens/LogoutScreen";
 
 const Stack = createStackNavigator();
 
@@ -55,7 +56,7 @@ function RootStack() {
                 <Stack.Screen name="Register" component={RegisterScreen} />
               </>
             )}
-            <Stack.Screen name="Logout" component={LoginScreen} />
+            <Stack.Screen name="Logout" component={LogoutScreen} />
             <Stack.Screen name="Activate" component={ActivateScreen} />
           </Stack.Navigator>
         </NavigationContainer>

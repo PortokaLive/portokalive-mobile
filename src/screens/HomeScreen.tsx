@@ -4,7 +4,6 @@ import { MainTheme } from "../theme";
 import { logoutUser } from "../utils/redux/actions/ActionAuth";
 import { useSelector } from "../utils/redux/Store";
 import { clearActivation } from "../utils/redux/actions/ActionSuccess";
-import { Linking } from "react-native";
 
 export const HomeScreen = ({ navigation }: any) => {
   useEffect(() => {

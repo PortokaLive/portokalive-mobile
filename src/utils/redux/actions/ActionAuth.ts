@@ -3,7 +3,7 @@ import {
   SET_CURRENT_USER,
   GLOBAL_ERROR,
   GLOBAL_SUCCESS,
-  ACTIVATION_REQUIRED
+  ACTIVATION_REQUIRED,
 } from "./Types";
 import { User } from "../../../models/User";
 import { setItem, removeItem } from "../../helpers/AsyncStorageHelper";
@@ -60,7 +60,7 @@ export const setCurrentUser = (user: any) => {
   } as Action<any>);
 };
 
-export const logoutUser = (navigation:any) => {
+export const logoutUser = (navigation: any) => {
   removeItem("token");
   setCurrentUser(null);
   clearActivation();

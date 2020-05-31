@@ -6,5 +6,5 @@ import { ReducerSuccess } from "./ReducerSuccess";
 export const rootReducers = combineReducers({
   auth: ReducerAuth,
   globalError: ReducerError,
-  globalSuccess: ReducerSuccess
+  globalSuccess: ReducerSuccess,
 });

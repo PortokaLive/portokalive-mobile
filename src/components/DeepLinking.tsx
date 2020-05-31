@@ -1,15 +1,17 @@
 import React, { useEffect } from "react";
-import { Platform, Linking } from "react-native";
+import { Linking } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { useSelector } from "../utils/redux/Store";
 
 export const DeepLinking = () => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
-  const isActivationRequired = useSelector((state) => state.auth.activation.isActivationRequired);
+  const isActivationRequired = useSelector(
+    (state) => state.auth.activation.isActivationRequired
+  );
 
   const navigation = useNavigation();
   useEffect(() => {
-    if(!isActivationRequired) {
+    if (!isActivationRequired) {
       return;
     }
     Linking.addEventListener("url", handleOpenURL);
