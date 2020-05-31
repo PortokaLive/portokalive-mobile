@@ -15,6 +15,7 @@ import {
 import { registerUser } from "../utils/redux/actions/ActionAuth";
 import { ActivityIndicator } from "react-native";
 import { useSelector } from "../utils/redux/Store";
+import { DeepLinking } from "../components/DeepLinking";
 
 const initialUser = { email: "", password: "" };
 
@@ -45,7 +46,10 @@ export const RegisterScreen = ({ navigation }: any) => {
   const [error, dispatchError] = useReducer(errorReducer, initialUser);
   const [secureTextEntry, setSecureTextEntry] = useState(true);
   const [loading, setLoading] = useState(false);
-  const isError = useSelector(state => state.globalError);
+  const isError = useSelector((state) => state.globalError);
+  const isActivationRequired = useSelector(
+    (state) => state.auth.activation.isActivationRequired
+  );
 
   const renderSpinner = () => (
     <>
@@ -159,13 +163,17 @@ export const RegisterScreen = ({ navigation }: any) => {
   };
 
   useEffect(() => {
-    if (isError.name) {
+    if (isError.name || !isActivationRequired || isActivationRequired) {
       setLoading(false);
     }
-  }, [isError]);
+    if (isActivationRequired) {
+      navigation.navigate("Login");
+    }
+  }, [isError, isActivationRequired]);
 
   return (
     <Layout style={MainTheme.LayoutTheme.container}>
+      <DeepLinking />
       <Layout>
         <LogoImage width={100} height={100} padding={10} fontSize={35} />
         <Input
@@ -184,7 +192,11 @@ export const RegisterScreen = ({ navigation }: any) => {
           onChangeText={handlePasswordChange}
         />
         <Text style={MainTheme.TextTheme.textDanger}>{error.password}</Text>
-        <Button style={{ marginTop: 15 }} onPress={handleRegister}>
+        <Button
+          disabled={loading}
+          style={{ marginTop: 15 }}
+          onPress={handleRegister}
+        >
           {renderSpinner}
         </Button>
         <Layout

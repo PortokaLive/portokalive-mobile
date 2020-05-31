@@ -1,10 +1,16 @@
 import React, { useEffect } from "react";
 import { Modal, Card, Text, Button, Layout } from "@ui-kitten/components";
 import { MainTheme } from "../theme";
-import { clearSuccess } from "../utils/redux/actions/ActionSuccess";
+import { useSelector } from "../utils/redux/Store";
+import { clearActivation } from "../utils/redux/actions/ActionSuccess";
 import { Keyboard } from "react-native";
+import { resendActivation } from "../utils/redux/actions/ActionAuth";
 
-export const SuccessModalInjector = ({ title, message }: any) => {
+export const ActivationModalInjector = ({ email }: any) => {
+  const renderText = () => (
+    <Text style={{ color: "gray" }}>Resend Verification</Text>
+  );
+
   useEffect(() => {
     Keyboard.dismiss();
   }, [Keyboard]);
@@ -27,18 +33,32 @@ export const SuccessModalInjector = ({ title, message }: any) => {
                 textAlign: "center",
               }}
             >
-              {title}
+              Login Success
             </Text>
-            <Text style={{ fontSize: 18 }}>{message}</Text>
+            <Text>You have not activated your account yet.</Text>
+            <Text>Please check your email to activate.</Text>
           </Layout>
           <Button
             style={{
               ...MainTheme.ComponentTheme.backgroundSuccess,
               ...MainTheme.ComponentTheme.borderSuccess,
             }}
-            onPress={() => clearSuccess()}
+            onPress={clearActivation}
           >
             OK
+          </Button>
+          <Button
+            style={{
+              marginTop: 10,
+              backgroundColor: "white",
+              ...MainTheme.ComponentTheme.borderSuccess,
+            }}
+            onPress={() => {
+              resendActivation(email);
+              clearActivation();
+            }}
+          >
+            {renderText}
           </Button>
         </Card>
       </Modal>

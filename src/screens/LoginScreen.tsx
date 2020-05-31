@@ -10,6 +10,7 @@ import { EmailRegex } from "../constants/Regex";
 import { loginUser } from "../utils/redux/actions/ActionAuth";
 import { User } from "../models/User";
 import { useSelector } from "../utils/redux/Store";
+import { DeepLinking } from "../components/DeepLinking";
 
 const initialUser: User = { email: "", password: "" };
 
@@ -38,9 +39,12 @@ const errorReducer = (state = initialUser, action: Action<string>) => {
 export const LoginScreen = ({ navigation }: any) => {
   const [user, dispatchUser] = useReducer(userReducer, initialUser);
   const [error, dispatchError] = useReducer(errorReducer, initialUser);
-  const isError = useSelector((state) => state.globalError);
   const [secureTextEntry, setSecureTextEntry] = useState(true);
   const [loading, setLoading] = useState(false);
+  const isError = useSelector((state) => state.globalError);
+  const isActivationRequired = useSelector(
+    (state) => state.auth.activation.isActivationRequired
+  );
 
   const renderSpinner = () => (
     <>
@@ -124,13 +128,14 @@ export const LoginScreen = ({ navigation }: any) => {
   };
 
   useEffect(() => {
-    if (isError.name) {
+    if (isError.name || !isActivationRequired || isActivationRequired) {
       setLoading(false);
     }
-  }, [isError]);
+  }, [isError, isActivationRequired]);
 
   return (
     <Layout style={MainTheme.LayoutTheme.container}>
+      <DeepLinking />
       <Layout>
         <LogoImage width={100} height={100} padding={10} fontSize={35} />
         <Input
@@ -149,7 +154,11 @@ export const LoginScreen = ({ navigation }: any) => {
           onChangeText={handlePasswordChange}
         />
         <Text style={MainTheme.TextTheme.textDanger}>{error.password}</Text>
-        <Button style={{ marginTop: 15 }} onPress={handleLogin}>
+        <Button
+          disabled={loading}
+          style={{ marginTop: 15 }}
+          onPress={handleLogin}
+        >
           {renderSpinner}
         </Button>
         <Layout

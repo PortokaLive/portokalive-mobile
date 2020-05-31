@@ -13,12 +13,16 @@ import { RegisterScreen } from "./src/screens/RegisterScreen";
 import { checkPreviousSession } from "./src/utils/helpers/SessionHelper";
 import { ErrorModalInjector } from "./src/components/ModalError";
 import { SuccessModalInjector } from "./src/components/ModalSuccess";
+import { DeepLinking } from "./src/components/DeepLinking";
+import { ActivateScreen } from "./src/screens/ActivateScreen";
+import { ActivationModalInjector } from "./src/components/ModalActivation";
 
 const Stack = createStackNavigator();
 
 function RootStack() {
   checkPreviousSession();
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+  const activation = useSelector((state) => state.auth.activation);
   const error = useSelector((state) => state.globalError);
   const success = useSelector((state) => state.globalSuccess);
 
@@ -35,18 +39,24 @@ function RootStack() {
             message={success.message}
           />
         )}
+        {!!activation.isActivationRequired && (
+          <ActivationModalInjector email={activation.email} />
+        )}
         <NavigationContainer>
           <Stack.Navigator
             initialRouteName={isAuthenticated ? "Home" : "Login"}
             headerMode="none"
           >
             {isAuthenticated && (
-              <Stack.Screen name="Home" component={HomeScreen} />
+              <>
+                <Stack.Screen name="Home" component={HomeScreen} />
+              </>
             )}
             {!isAuthenticated && (
               <>
                 <Stack.Screen name="Login" component={LoginScreen} />
                 <Stack.Screen name="Register" component={RegisterScreen} />
+                <Stack.Screen name="Activate" component={ActivateScreen} />
               </>
             )}
           </Stack.Navigator>

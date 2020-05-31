@@ -2,8 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Modal, Card, Text, Button, Layout } from "@ui-kitten/components";
 import { MainTheme } from "../theme";
 import { clearError } from "../utils/redux/actions/ActionError";
+import { Keyboard } from "react-native";
 
 export const ErrorModalInjector = ({ title, message }: any) => {
+  useEffect(() => {
+    Keyboard.dismiss();
+  }, [Keyboard]);
+
   return (
     <>
       <Modal
