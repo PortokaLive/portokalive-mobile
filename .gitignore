@@ -5,3 +5,4 @@ android/.gradle
 ios/Pods
 .env
 .env.prod
+.DS_Store
