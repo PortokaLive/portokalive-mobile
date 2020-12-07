@@ -15,6 +15,7 @@ export const setAuthToken = () => {
 setAuthToken();
 
 export const AxiosClient = axios.create({
-  baseURL: Config.BACKEND_API,
+  baseURL:
+    Config["BACKEND_API_" + Config.ENVIRONMENT] || Config.BACKEND_API_DEV,
   timeout: 5000,
 });
