@@ -6,3 +6,4 @@ ios/Pods
 .env
 .env.prod
 .DS_Store
+.idea

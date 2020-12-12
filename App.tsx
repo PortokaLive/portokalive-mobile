@@ -6,6 +6,7 @@ import * as eva from "@eva-design/eva";
 import { EvaIconsPack } from "@ui-kitten/eva-icons";
 import { ApplicationProvider, IconRegistry } from "@ui-kitten/components";
 import { HomeScreen } from "./src/screens/HomeScreen";
+import PushScreen from "./PushScreen";
 import { Store, useSelector } from "./src/utils/redux/Store";
 import { LoginScreen } from "./src/screens/LoginScreen";
 import { default as Colors } from "./src/theme/Colors.json";
@@ -47,7 +48,7 @@ function RootStack() {
           >
             {isAuthenticated && (
               <>
-                <Stack.Screen name="Home" component={HomeScreen} />
+                <Stack.Screen name="Home" component={PushScreen} />
               </>
             )}
             {!isAuthenticated && (
