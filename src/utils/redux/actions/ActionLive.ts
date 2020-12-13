@@ -11,6 +11,6 @@ export const getLiveLists = async () => {
       payload: list,
     } as Action<any>);
   } catch (ex) {
-    throw ex;
+    console.error(ex);
   }
 };

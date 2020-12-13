@@ -36,7 +36,12 @@ export const MediaClient = axios.create({
 });
 
 MediaClient.interceptors.request.use(async function (config) {
-  const token = await getToken("api_key");
+  const token = await getToken("access_token");
   config.headers.Authorization = token ? `Bearer ${token}` : "";
   return config;
+});
+
+export const MediaSandboxClient = axios.create({
+  baseURL: Config["LIVE_SANDBOX_API"],
+  timeout: 5000,
 });

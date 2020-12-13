@@ -6,11 +6,12 @@ import {
   ACTIVATION_REQUIRED,
 } from "./Types";
 import { User } from "../../../models/User";
-import { setItem, removeItem } from "../../helpers/AsyncStorageHelper";
+import { setItem, removeItem, getItem } from "../../helpers/AsyncStorageHelper";
 import JwtDecode from "jwt-decode";
 import { Action } from "../../../models/Action";
 import { GlobalError } from "../../../models/Error";
 import { httpPost } from "../../helpers/AxiosHelper";
+import { httpPost as httpPost_Media } from "../../helpers/ApiVideoHelper";
 import { GlobalSuccess } from "../../../models/Success";
 import { clearActivation } from "./ActionSuccess";
 
@@ -25,8 +26,10 @@ export const loginUser = async (user: User) => {
       response.data.result === "SUCCESS" &&
       response.data.token
     ) {
-      const decoded = JwtDecode(response.data.token);
+      const decoded = JwtDecode<any>(response.data.token);
       setItem("token", response.data.token);
+      await setItem("api_key", decoded?.api_key);
+      await getVideoTokens();
       setCurrentUser(decoded);
     }
   } catch (ex) {
@@ -50,6 +53,28 @@ export const loginUser = async (user: User) => {
         ),
       } as Action<GlobalError>);
     }
+  }
+};
+
+export const getVideoTokens = async () => {
+  try {
+    const result = await httpPost_Media("/auth/api-key", {
+      apiKey: (await getItem("api_key")) || "",
+    });
+    if (result?.data) {
+      setItem("access_token", result?.data?.access_token);
+      setItem("refresh_token", result?.data?.refresh_token);
+    }
+  } catch (ex) {
+    console.error(ex);
+    Store.dispatch({
+      type: GLOBAL_ERROR,
+      payload: new GlobalError(
+        ex?.response?.status,
+        "Authentication Failed",
+        "Invalid API key for api.video"
+      ),
+    } as Action<GlobalError>);
   }
 };
 
@@ -116,9 +141,9 @@ export const activateAccount = async (
       response.data.result === "SUCCESS" &&
       response.data.token
     ) {
-      const decoded = JwtDecode(response.data.token);
+      const decoded = JwtDecode<any>(response.data.token);
       setItem("token", response.data.token);
-      setItem("api_key", response.data.api_key);
+      setItem("api_key", decoded?.api_key);
       setTimeout(() => {
         setCurrentUser(decoded);
       }, 1000);
@@ -140,7 +165,9 @@ export const activateAccount = async (
 
 export const resendActivation = async (email: string) => {
   try {
-    const response = await httpPost("/user/sendActivationEmail", { email });
+    const response = await httpPost("/user/sendActivationEmail", {
+      email,
+    });
     if (!response) {
       return;
     }
