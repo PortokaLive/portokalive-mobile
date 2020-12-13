@@ -1,26 +1,48 @@
 import React, { useEffect } from "react";
-import { Layout, Text, Button } from "@ui-kitten/components";
+import { Layout } from "@ui-kitten/components";
 import { MainTheme } from "../theme";
-import { logoutUser } from "../utils/redux/actions/ActionAuth";
-import { useSelector } from "../utils/redux/Store";
 import { clearActivation } from "../utils/redux/actions/ActionSuccess";
+import BottomTabs from "../components/BottomTabs";
+import HomePage from "../pages/HomePage";
+import LivePage from "../pages/LivePage";
+import ProfilePage from "../pages/ProfilePage";
 
-export const HomeScreen = ({ navigation }: any) => {
+export const HomeScreen = (props: any) => {
   useEffect(() => {
     clearActivation();
   }, []);
 
-  const user = useSelector((state) => state.auth.user);
+  const routes = [
+    {
+      name: "Home",
+      showTab: true,
+      component: <HomePage {...props} />,
+    },
+    {
+      name: "Live",
+      showTab: false,
+      component: <LivePage {...props} />,
+    },
+    {
+      name: "Profile",
+      showTab: true,
+      component: <ProfilePage {...props} />,
+    },
+  ];
+
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
+
   return (
-    <Layout style={MainTheme.LayoutTheme.container}>
-      <Text category="h1">HOME {user && user.email}</Text>
-      <Button
-        onPress={() => {
-          logoutUser(navigation);
-        }}
-      >
-        Logout
-      </Button>
-    </Layout>
+    <>
+      <Layout style={MainTheme.LayoutTheme.container}>
+        {routes[selectedIndex].component}
+      </Layout>
+      {
+        <BottomTabs
+          selectedIndex={selectedIndex}
+          setSelectedIndex={setSelectedIndex}
+        />
+      }
+    </>
   );
 };

@@ -24,7 +24,7 @@
     "react-native-action-button": "^2.8.5",
     "react-native-config": "^1.2.0",
     "react-native-gesture-handler": "^1.6.1",
-    "react-native-nodemediaclient": "^0.1.9",
+    "react-native-nodemediaclient": "0.2.14",
     "react-native-safe-area-context": "^0.7.3",
     "react-native-screens": "^2.5.0",
     "react-native-svg": "^12.1.0",

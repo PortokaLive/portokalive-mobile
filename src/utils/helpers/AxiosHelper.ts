@@ -1,4 +1,4 @@
-import { AxiosClient } from "../redux/AxiosClient";
+import { BackendClient } from "../redux/AxiosClient";
 import { Store } from "../redux/Store";
 import { GLOBAL_ERROR } from "../redux/actions/Types";
 import { GlobalError } from "../../models/Error";
@@ -6,7 +6,7 @@ import { GlobalError } from "../../models/Error";
 export const httpGet = (url: string): Promise<any> => {
   return new Promise(async (resolve, reject) => {
     try {
-      const result = await AxiosClient.get(url);
+      const result = await BackendClient.get(url);
       if (!result) {
         reject();
       }
@@ -25,7 +25,7 @@ export const httpGet = (url: string): Promise<any> => {
 export const httpPost = (url: string, params: any): Promise<any> => {
   return new Promise(async (resolve, reject) => {
     try {
-      const result = await AxiosClient.post(url, params);
+      const result = await BackendClient.post(url, params);
       if (!result) {
         reject();
       }
@@ -41,7 +41,7 @@ export const httpPost = (url: string, params: any): Promise<any> => {
   });
 };
 
-const throwNetworkError = () => {
+export const throwNetworkError = () => {
   Store.dispatch({
     type: GLOBAL_ERROR,
     payload: new GlobalError(

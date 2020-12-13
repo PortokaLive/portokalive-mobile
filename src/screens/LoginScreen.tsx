@@ -113,7 +113,7 @@ export const LoginScreen = ({ navigation }: any) => {
     });
   };
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     if (!user.email) {
       handleEmailChange(user.email);
     }
@@ -122,15 +122,21 @@ export const LoginScreen = ({ navigation }: any) => {
     }
     if (!error.email && !error.password && user.email && user.password) {
       setLoading(true);
-      loginUser(user);
+      await loginUser(user);
+      navigation.navigate("Home");
     }
   };
 
   useEffect(() => {
-    if (isError.name || isAuthenticated || !activation.isActivationRequired || activation.isActivationRequired) {
+    if (
+      isError.name ||
+      isAuthenticated ||
+      !activation.isActivationRequired ||
+      activation.isActivationRequired
+    ) {
       setLoading(false);
     }
-  }, [isError, activation.isActivationRequired,isAuthenticated]);
+  }, [isError, activation.isActivationRequired, isAuthenticated]);
 
   return (
     <Layout style={MainTheme.LayoutTheme.container}>

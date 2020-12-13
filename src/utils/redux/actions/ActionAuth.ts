@@ -10,7 +10,7 @@ import { setItem, removeItem } from "../../helpers/AsyncStorageHelper";
 import JwtDecode from "jwt-decode";
 import { Action } from "../../../models/Action";
 import { GlobalError } from "../../../models/Error";
-import { httpGet, httpPost } from "../../helpers/AxiosHelper";
+import { httpPost } from "../../helpers/AxiosHelper";
 import { GlobalSuccess } from "../../../models/Success";
 import { clearActivation } from "./ActionSuccess";
 
@@ -60,11 +60,14 @@ export const setCurrentUser = (user: any) => {
   } as Action<any>);
 };
 
-export const logoutUser = (navigation: any) => {
+export const logoutUser = (navigation?: any) => {
   removeItem("token");
+  removeItem("api_key");
   setCurrentUser(null);
   clearActivation();
-  navigation.navigate("Logout");
+  if (navigation) {
+    navigation.navigate("Logout");
+  }
 };
 
 export const registerUser = async (user: User) => {
@@ -115,6 +118,7 @@ export const activateAccount = async (
     ) {
       const decoded = JwtDecode(response.data.token);
       setItem("token", response.data.token);
+      setItem("api_key", response.data.api_key);
       setTimeout(() => {
         setCurrentUser(decoded);
       }, 1000);

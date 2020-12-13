@@ -3,11 +3,16 @@ import { Layout, Spinner, Text } from "@ui-kitten/components";
 import { MainTheme } from "../theme";
 import { useSelector } from "../utils/redux/Store";
 
-export const LogoutScreen = ({ navigation }: any) => {
+export const LogoutScreen = ({ loading, navigation }: any) => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   useEffect(() => {
+    if (loading) {
+      return;
+    }
     if (!isAuthenticated) {
       navigation.navigate("Login");
+    } else {
+      navigation.navigate("Home");
     }
   });
 
