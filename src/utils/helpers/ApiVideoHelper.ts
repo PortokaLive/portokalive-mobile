@@ -1,5 +1,6 @@
+import { getVideoTokens } from "../redux/actions/ActionAuth";
 import { MediaClient } from "../redux/AxiosClient";
-import { throwNetworkError } from "./ErrorHelper";
+import { throwError } from "./ErrorHelper";
 
 export const httpGet = (url: string): Promise<any> => {
   return new Promise(async (resolve, reject) => {
@@ -10,7 +11,11 @@ export const httpGet = (url: string): Promise<any> => {
       }
       resolve(result);
     } catch (ex) {
-      throwNetworkError(ex);
+      if (ex?.response?.status === 401) {
+        await getVideoTokens();
+        return httpGet(url);
+      }
+      throwError(ex);
     }
   });
 };
@@ -24,7 +29,11 @@ export const httpPost = (url: string, params: any): Promise<any> => {
       }
       resolve(result);
     } catch (ex) {
-      throwNetworkError(ex);
+      if (ex?.response?.status === 401) {
+        await getVideoTokens();
+        return httpPost(url, params);
+      }
+      throwError(ex);
     }
   });
 };

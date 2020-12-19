@@ -3,7 +3,7 @@ import { GlobalError } from "../../models/Error";
 import { GLOBAL_ERROR } from "../redux/actions/Types";
 import { Store } from "../redux/Store";
 
-export const throwNetworkError = (ex: AxiosError) => {
+export const throwError = (ex: AxiosError) => {
   const code = ex?.response?.status;
   let payload;
 
