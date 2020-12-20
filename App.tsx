@@ -17,6 +17,7 @@ import { DeepLinking } from "./src/components/DeepLinking";
 import { ActivateScreen } from "./src/screens/ActivateScreen";
 import { ActivationModalInjector } from "./src/components/ModalActivation";
 import { LogoutScreen } from "./src/screens/LogoutScreen";
+import { BackHandler } from "react-native";
 
 const Stack = createStackNavigator();
 
@@ -27,6 +28,16 @@ function RootStack() {
   const success = useSelector((state) => state.globalSuccess);
 
   const [loading, setLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    const handleBackButton = () => {
+      return true;
+    };
+    BackHandler.addEventListener("hardwareBackPress", handleBackButton);
+    return () => {
+      BackHandler.removeEventListener("hardwareBackPress", handleBackButton);
+    };
+  }, []);
 
   React.useEffect(() => {
     const checkSession = async () => {

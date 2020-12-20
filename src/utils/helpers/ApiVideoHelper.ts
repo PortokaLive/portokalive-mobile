@@ -20,7 +20,7 @@ export const httpGet = (url: string): Promise<any> => {
   });
 };
 
-export const httpPost = (url: string, params: any): Promise<any> => {
+export const httpPost = (url: string, params?: any): Promise<any> => {
   return new Promise(async (resolve, reject) => {
     try {
       const result = await MediaClient.post(url, params);

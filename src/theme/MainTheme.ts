@@ -6,6 +6,17 @@ const container: StyleProp<ViewStyle> = {
   alignItems: "center",
 };
 
+const cardContainer: StyleProp<ViewStyle> = {
+  width: "100%",
+  padding: 0,
+};
+
+const paddingBox: StyleProp<ViewStyle> = {
+  padding: 8,
+};
+
 export const MainTheme = {
   container,
+  cardContainer,
+  paddingBox,
 };

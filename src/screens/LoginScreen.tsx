@@ -1,6 +1,12 @@
 import React, { useReducer, useState, useEffect } from "react";
-import { ActivityIndicator } from "react-native";
-import { Layout, Input, Icon, Text, Button } from "@ui-kitten/components";
+import {
+  Layout,
+  Input,
+  Icon,
+  Text,
+  Button,
+  Spinner,
+} from "@ui-kitten/components";
 import { MainTheme } from "../theme";
 import { Action } from "../models/Action";
 import { UserReducerType } from "../constants/Types";
@@ -11,6 +17,7 @@ import { loginUser } from "../utils/redux/actions/ActionAuth";
 import { User } from "../models/User";
 import { useSelector } from "../utils/redux/Store";
 import { ActivationModalInjector } from "../components/ModalActivation";
+import { View } from "react-native";
 
 const initialUser: User = { email: "", password: "" };
 
@@ -45,15 +52,19 @@ export const LoginScreen = ({ navigation }: any) => {
   const activation = useSelector((state) => state.auth.activation);
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
-  const renderSpinner = () => (
-    <>
-      {loading && <ActivityIndicator color="white" />}
-      {!loading && (
-        <Text style={{ color: "white", fontWeight: "bold" }}>Login</Text>
-      )}
-    </>
+  const LoadingIndicator = (props: any) => (
+    <View style={{ justifyContent: "center", alignItems: "center" }}>
+      <Spinner size="small" />
+    </View>
   );
 
+  const LoginButtonText = () => (
+    <>
+      <Text style={{ color: "white", fontWeight: "bold" }}>
+        {loading ? "Logging In..." : "Login"}
+      </Text>
+    </>
+  );
   const renderIcon = (props: any) => (
     <TouchableWithoutFeedback
       onPress={() => {
@@ -165,8 +176,9 @@ export const LoginScreen = ({ navigation }: any) => {
           disabled={loading}
           style={{ marginTop: 15 }}
           onPress={handleLogin}
+          accessoryLeft={loading ? LoadingIndicator : undefined}
         >
-          {renderSpinner}
+          {LoginButtonText}
         </Button>
         <Layout
           style={{

@@ -13,8 +13,13 @@ const textDanger: StyleProp<TextStyle> = {
   color: ColorTheme.Colors["color-danger-500"],
 };
 
+const textSuccess: StyleProp<TextStyle> = {
+  color: ColorTheme.Colors["color-success-500"],
+};
+
 export const TextTheme = {
   textPrimary,
   textDanger,
-  textBold
+  textBold,
+  textSuccess,
 };

@@ -12,6 +12,8 @@ export const HomeScreen = (props: any) => {
     clearActivation();
   }, []);
 
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
+
   const routes = [
     {
       name: "Home",
@@ -21,7 +23,7 @@ export const HomeScreen = (props: any) => {
     {
       name: "Live",
       showTab: false,
-      component: <LivePage {...props} />,
+      component: <LivePage {...props} navigate={setSelectedIndex} />,
     },
     {
       name: "Profile",
@@ -30,19 +32,17 @@ export const HomeScreen = (props: any) => {
     },
   ];
 
-  const [selectedIndex, setSelectedIndex] = React.useState(0);
-
   return (
     <>
       <Layout style={MainTheme.LayoutTheme.container}>
         {routes[selectedIndex].component}
       </Layout>
-      {
+      {routes[selectedIndex]?.showTab && (
         <BottomTabs
           selectedIndex={selectedIndex}
           setSelectedIndex={setSelectedIndex}
         />
-      }
+      )}
     </>
   );
 };
