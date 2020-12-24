@@ -125,7 +125,7 @@ export default () => {
           keyExtractor={(item) => item?.listStreamId}
           onRefresh={handleOnRefresh}
           onEndReached={handleEndReached}
-          onEndReachedThreshold={100}
+          onEndReachedThreshold={0.5}
           refreshing={isLoading}
           ListFooterComponent={renderFooter}
         />
