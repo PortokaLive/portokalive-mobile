@@ -1,5 +1,5 @@
 import axios from "axios";
-import Config from "react-native-config";
+import Config from "./Config";
 import { getItem } from "../helpers/AsyncStorageHelper";
 
 export const getToken = (key: string) =>

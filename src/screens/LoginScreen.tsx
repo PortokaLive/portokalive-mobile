@@ -69,8 +69,7 @@ export const LoginScreen = ({ navigation }: any) => {
     <TouchableWithoutFeedback
       onPress={() => {
         setSecureTextEntry(!secureTextEntry);
-      }}
-    >
+      }}>
       <Icon {...props} name={secureTextEntry ? "eye-off" : "eye"} />
     </TouchableWithoutFeedback>
   );
@@ -176,8 +175,7 @@ export const LoginScreen = ({ navigation }: any) => {
           disabled={loading}
           style={{ marginTop: 15 }}
           onPress={handleLogin}
-          accessoryLeft={loading ? LoadingIndicator : undefined}
-        >
+          accessoryLeft={loading ? LoadingIndicator : undefined}>
           {LoginButtonText}
         </Button>
         <Layout
@@ -185,8 +183,7 @@ export const LoginScreen = ({ navigation }: any) => {
             marginTop: 50,
             flexDirection: "row",
             justifyContent: "center",
-          }}
-        >
+          }}>
           <Text>No account yet? Register </Text>
           <Text
             style={{
@@ -195,8 +192,7 @@ export const LoginScreen = ({ navigation }: any) => {
             }}
             onPress={() => {
               navigation.navigate("Register");
-            }}
-          >
+            }}>
             here
           </Text>
         </Layout>

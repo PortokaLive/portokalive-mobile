@@ -10,6 +10,7 @@ export default () => {
   const [isScrollLoading, setScrollLoading] = React.useState(false);
   const [page, setPage] = React.useState(1);
   const liveStreams = useSelector((state) => state?.live?.liveList ?? []);
+  const auth = useSelector((state) => state?.auth?.user);
 
   React.useEffect(() => {
     page === 1 ? setLoading(true) : setScrollLoading(true);
@@ -38,8 +39,8 @@ export default () => {
     );
   }
 
-  const renderItem = ({ item: stream, index }: any) => (
-    <Layout key={index} style={MainTheme.DefaultTheme.paddingBox}>
+  const renderItem = ({ item: stream }: any) => (
+    <Layout key={stream?.name} style={MainTheme.DefaultTheme.paddingBox}>
       <Card
         style={MainTheme.DefaultTheme.cardContainer}
         header={() => (
@@ -49,23 +50,20 @@ export default () => {
               display: "flex",
               flexDirection: "row",
               justifyContent: "flex-end",
-            }}
-          >
+            }}>
             <View
               style={{
                 ...(stream?.broadcasting
                   ? MainTheme.ComponentTheme.borderSuccess
                   : MainTheme.ComponentTheme.borderDanger),
                 borderWidth: 1,
-              }}
-            >
+              }}>
               <Text
                 style={
                   stream?.broadcasting
                     ? MainTheme.TextTheme.textSuccess
                     : MainTheme.TextTheme.textDanger
-                }
-              >
+                }>
                 {stream?.broadcasting ? "Online" : "Offline"}
               </Text>
             </View>
@@ -75,18 +73,13 @@ export default () => {
           <View style={MainTheme.DefaultTheme.paddingBox}>
             <Text style={{ color: "darkgray" }}>{stream?.name}</Text>
           </View>
-        )}
-      >
+        )}>
         <Image
           style={{
             width: 350,
             height: 150,
           }}
-          source={
-            stream?.assets?.thumbnail
-              ? { uri: stream?.assets?.thumbnail }
-              : require("../assets/live.png")
-          }
+          source={require("../assets/live.png")}
         />
       </Card>
     </Layout>
@@ -109,22 +102,29 @@ export default () => {
           paddingVertical: 20,
           borderTopWidth: 1,
           borderColor: "gray",
-        }}
-      >
+        }}>
         <Spinner size="large" />
       </View>
     );
   };
 
+  const currentUser = auth.email.split("@")[0];
+
+  const displayingLive = liveStreams
+    .filter((v: any) => v.name !== currentUser)
+    .map((v: any, index: number) => ({
+      ...v,
+      key: index,
+    }));
+
   return (
     <Layout style={MainTheme.LayoutTheme.container}>
-      {liveStreams?.length ? (
+      {displayingLive?.length ? (
         <FlatList
-          data={liveStreams}
+          data={displayingLive}
           renderItem={renderItem}
-          keyExtractor={(item) => item?.listStreamId}
+          keyExtractor={(item) => item?.key}
           onRefresh={handleOnRefresh}
-          onEndReached={handleEndReached}
           onEndReachedThreshold={0.5}
           refreshing={isLoading}
           ListFooterComponent={renderFooter}

@@ -11,24 +11,6 @@ export default (props: any) => {
   const currentUser = useSelector((state) => state?.auth?.user ?? {});
   const currentLive = useSelector((state) => state?.live?.currentLive ?? {});
 
-  React.useEffect(() => {
-    const init = async () => {
-      try {
-        createLiveStream(
-          currentUser?.email?.split("@")?.[0] ?? currentUser?.id
-        );
-      } catch (ex) {
-        console.error(ex);
-        props.navigate(0);
-      } finally {
-        setCreated(true);
-      }
-    };
-    if (!isCreated) {
-      init();
-    }
-  }, [isCreated]);
-
   if (!isCreated || !currentLive?.streamKey) {
     return (
       <>

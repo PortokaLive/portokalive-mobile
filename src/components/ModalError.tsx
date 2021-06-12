@@ -13,29 +13,25 @@ export const ErrorModalInjector = ({ title, message }: any) => {
     <>
       <Modal
         visible={true}
-        backdropStyle={MainTheme.LayoutTheme.blackTransparentBackground}
-      >
+        backdropStyle={MainTheme.LayoutTheme.blackTransparentBackground}>
         <Card disabled={true}>
           <Layout
-            style={{ ...MainTheme.LayoutTheme.container, paddingVertical: 15 }}
-          >
+            style={{ ...MainTheme.LayoutTheme.container, paddingVertical: 15 }}>
             <Text
               style={{
                 fontSize: 22,
                 fontWeight: "bold",
                 width: 250,
                 textAlign: "center",
-              }}
-            >
+              }}>
               {title}
             </Text>
             <Text style={{ fontSize: 18 }}>{message}</Text>
           </Layout>
           <Button
             style={MainTheme.ComponentTheme.backgroundDanger}
-            onPress={() => clearError()}
-          >
-            OK
+            onPress={() => clearError()}>
+            Done
           </Button>
         </Card>
       </Modal>

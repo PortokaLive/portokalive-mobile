@@ -36,23 +36,15 @@ export const loginUser = async (user: User) => {
     if (!ex) {
       return;
     }
-    if (ex!.response!.data!.error === ACTIVATION_REQUIRED) {
-      Store.dispatch({
-        type: ACTIVATION_REQUIRED,
-        payload: {
-          email: user.email,
-        },
-      });
-    } else {
-      Store.dispatch({
-        type: GLOBAL_ERROR,
-        payload: new GlobalError(
-          ex?.response?.status,
-          "Login failed",
-          "Invalid credentials"
-        ),
-      } as Action<GlobalError>);
-    }
+
+    Store.dispatch({
+      type: GLOBAL_ERROR,
+      payload: new GlobalError(
+        ex?.response?.status,
+        "Login failed",
+        "Invalid credentials"
+      ),
+    } as Action<GlobalError>);
   }
 };
 

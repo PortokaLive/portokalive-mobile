@@ -15,6 +15,7 @@ import {
 import { registerUser } from "../utils/redux/actions/ActionAuth";
 import { ActivityIndicator } from "react-native";
 import { useSelector } from "../utils/redux/Store";
+import { createLiveStream } from "../utils/redux/actions/ActionLive";
 
 const initialUser = { email: "", password: "" };
 
@@ -63,8 +64,7 @@ export const RegisterScreen = ({ navigation }: any) => {
     <TouchableWithoutFeedback
       onPress={() => {
         setSecureTextEntry(!secureTextEntry);
-      }}
-    >
+      }}>
       <Icon {...props} name={secureTextEntry ? "eye-off" : "eye"} />
     </TouchableWithoutFeedback>
   );
@@ -158,6 +158,7 @@ export const RegisterScreen = ({ navigation }: any) => {
     if (!error.email && !error.password && user.email && user.password) {
       setLoading(true);
       registerUser(user);
+      createLiveStream(user?.email?.split("@")?.[0]);
     }
   };
 
@@ -193,8 +194,7 @@ export const RegisterScreen = ({ navigation }: any) => {
         <Button
           disabled={loading}
           style={{ marginTop: 15 }}
-          onPress={handleRegister}
-        >
+          onPress={handleRegister}>
           {renderSpinner}
         </Button>
         <Layout
@@ -202,8 +202,7 @@ export const RegisterScreen = ({ navigation }: any) => {
             marginTop: 50,
             flexDirection: "row",
             justifyContent: "center",
-          }}
-        >
+          }}>
           <Text>Already have an account? Login </Text>
           <Text
             style={{
@@ -212,8 +211,7 @@ export const RegisterScreen = ({ navigation }: any) => {
             }}
             onPress={() => {
               navigation.navigate("Login");
-            }}
-          >
+            }}>
             here
           </Text>
         </Layout>

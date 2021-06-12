@@ -24,7 +24,7 @@ export const httpPost = (url: string, params?: any): Promise<any> => {
       }
       resolve(result);
     } catch (ex) {
-      throwError(ex);
+      throwError(ex, params);
     }
   });
 };
