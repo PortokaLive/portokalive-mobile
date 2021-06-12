@@ -22,7 +22,7 @@ export const HomeScreen = (props: any) => {
     },
     {
       name: "Live",
-      showTab: false,
+      showTab: true,
       component: <LivePage {...props} navigate={setSelectedIndex} />,
     },
     {
