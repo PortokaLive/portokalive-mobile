@@ -27,11 +27,11 @@
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
-        <intent-filter android:label="PortokaLive">
+        <intent-filter android:label="Portoka Live">
           <action android:name="android.intent.action.VIEW" />
           <category android:name="android.intent.category.DEFAULT" />
           <category android:name="android.intent.category.BROWSABLE" />
-          <data android:scheme="https" android:host="portokalive.now.sh" /> // A
+          <data android:scheme="https" android:host="portokalive.vercel.app" /> // A
         </intent-filter>
       </activity>
       <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
