@@ -7,7 +7,9 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "unlink": "react-native unlink",
+    "build:dev:android": "react-native bundle --platform android --dev true --entry-file index.ts --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/"
   },
   "dependencies": {
     "@eva-design/eva": "^2.0.0",
@@ -22,7 +24,7 @@
     "react": "16.11.0",
     "react-native": "0.62.2",
     "react-native-action-button": "^2.8.5",
-    "react-native-config": "^1.2.0",
+    "react-native-config": "^1.4.2",
     "react-native-gesture-handler": "^1.6.1",
     "react-native-nodemediaclient": "0.2.14",
     "react-native-safe-area-context": "^0.7.3",
