@@ -3,6 +3,17 @@ import { httpGet, httpPost } from "../../helpers/ApiVideoHelper";
 import { Store } from "../Store";
 import { LIVE_LISTS, LIVE_LISTS_INCREMENT, SET_CURRENT_LIVE } from "./Types";
 
+export const getLiveListWithID = async (liveStreamId:string) => {
+  try {
+    const result = await httpGet(
+      `/live-streams/${liveStreamId}`
+    );
+    return result.data;
+  } catch (ex) {
+    console.error(ex);
+  }
+};
+
 export const getLiveLists = async (page: number, refresh?: boolean) => {
   try {
     const result = await httpGet(
