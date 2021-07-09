@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android --no-jetifier",
+    "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
@@ -22,7 +22,7 @@
     "axios": "^0.19.2",
     "jwt-decode": "^2.2.0",
     "react": "16.11.0",
-    "react-native": "0.62.2",
+    "react-native": "^0.64.2",
     "react-native-action-button": "^2.8.5",
     "react-native-config": "^1.4.2",
     "react-native-gesture-handler": "^1.6.1",
@@ -31,6 +31,7 @@
     "react-native-screens": "^2.5.0",
     "react-native-svg": "^12.1.0",
     "react-native-vector-icons": "^4.5.0",
+    "react-native-webview": "^11.6.5",
     "react-redux": "^7.2.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0"

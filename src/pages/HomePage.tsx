@@ -1,13 +1,13 @@
 import React from "react";
-import { Image, View, SafeAreaView, FlatList,Platform } from "react-native";
+import { Image, View, SafeAreaView, FlatList, Platform } from "react-native";
 import { useSelector } from "../utils/redux/Store";
 import { getLiveLists } from "../utils/redux/actions/ActionLive";
 import { Card, Layout, Spinner, Text } from "@ui-kitten/components";
 import { MainTheme } from "../theme";
-import { NodeMediaClient, NodeCameraView } from "react-native-nodemediaclient";
+import { NodeMediaClient } from "react-native-nodemediaclient";
 import { requestCameraPermission } from "../utils/helpers/RequestHelper";
 
-export default () => {
+export default ({ navigate, setSelectedLive }: any) => {
   const [isLoading, setLoading] = React.useState(false);
   const [isScrollLoading, setScrollLoading] = React.useState(false);
   const [page, setPage] = React.useState(1);
@@ -54,9 +54,15 @@ export default () => {
     );
   }
 
+  const handleDirectToLive = (player: string) => () => {
+    setSelectedLive(player);
+    navigate(3);
+  };
+
   const renderItem = ({ item: stream }: any) => (
     <Layout key={stream?.name} style={MainTheme.DefaultTheme.paddingBox}>
       <Card
+        onPress={handleDirectToLive(stream?.assets?.player)}
         style={MainTheme.DefaultTheme.cardContainer}
         header={() => (
           <View

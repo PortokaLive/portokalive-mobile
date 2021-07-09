@@ -15,7 +15,6 @@ import {
 import { registerUser } from "../utils/redux/actions/ActionAuth";
 import { ActivityIndicator } from "react-native";
 import { useSelector } from "../utils/redux/Store";
-import { createLiveStream } from "../utils/redux/actions/ActionLive";
 
 const initialUser = { email: "", password: "" };
 
@@ -158,7 +157,6 @@ export const RegisterScreen = ({ navigation }: any) => {
     if (!error.email && !error.password && user.email && user.password) {
       setLoading(true);
       registerUser(user);
-      createLiveStream(user?.email?.split("@")?.[0]);
     }
   };
 

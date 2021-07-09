@@ -6,6 +6,7 @@ import BottomTabs from "../components/BottomTabs";
 import HomePage from "../pages/HomePage";
 import LivePage from "../pages/LivePage";
 import ProfilePage from "../pages/ProfilePage";
+import OtherLivePage from "../pages/OtherLivePage";
 
 export const HomeScreen = (props: any) => {
   useEffect(() => {
@@ -13,12 +14,19 @@ export const HomeScreen = (props: any) => {
   }, []);
 
   const [selectedIndex, setSelectedIndex] = React.useState(0);
+  const [selectedLive, setSelectedLive] = React.useState();
 
   const routes = [
     {
       name: "Home",
       showTab: true,
-      component: <HomePage {...props} />,
+      component: (
+        <HomePage
+          {...props}
+          navigate={setSelectedIndex}
+          setSelectedLive={setSelectedLive}
+        />
+      ),
     },
     {
       name: "Live",
@@ -29,6 +37,11 @@ export const HomeScreen = (props: any) => {
       name: "Profile",
       showTab: true,
       component: <ProfilePage {...props} />,
+    },
+    {
+      name: "OtherLive",
+      showTab: true,
+      component: <OtherLivePage {...props} getLive={() => selectedLive} />,
     },
   ];
 
